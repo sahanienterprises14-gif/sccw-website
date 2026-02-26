@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sahani Civil Construction</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --nav: #0a2940;
+      --accent: #0a2940;
+      --muted: #6b7280;
+      --card: #ffffff;
+      --page: #f6f8fa;
+    }
+    * { box-sizing: border-box }
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: var(--page);
+      color: #111;
+    }
+    a { color: inherit }
+
+    /* Navigation */
+    nav {
+      background: var(--nav);
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 60;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 6px 10px;
+    }
+    nav a:hover { opacity: .9 }
+
+    /* Hero Section */
+    header.hero {
+      min-height: 360px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      padding: 72px 20px;
+      background:
+        linear-gradient(rgba(6,20,34,0.55), rgba(6,20,34,0.55)),
+        url('carpenter.png') center/cover no-repeat;
+    }
+    header.hero h1 { font-size: 2.4rem; margin-bottom: 8px; letter-spacing: 1px; }
+    header.hero p { margin: 6px 0 0; color: #e6eef8; }
+
+    .wrap { max-width: 1150px; margin: 40px auto; padding: 0 20px; }
+    h2.section { color: var(--accent); text-align: center; margin-bottom: 10px; }
+    p.lead { color: var(--muted); text-align: center; max-width: 920px; margin: 0 auto 20px; }
+
+    /* Services Grid */
+    .services-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; }
+    @media (max-width:900px){ .services-grid{ grid-template-columns:1fr; } }
+    .service {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      min-height: 160px;
+      color: #fff;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      box-shadow: 0 8px 24px rgba(8,15,30,0.06);
+    }
+    .service .overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,20,34,0.25), rgba(10,20,34,0.7)); }
+    .service h3 { position: relative; margin: 0 0 6px; z-index: 2 }
+    .service p { position: relative; margin: 0; z-index: 2; font-size: 0.95rem }
+
+    /* Background mapping */
+    .s-rcc{ background:url('rcc casting.png') center/cover no-repeat; }
+    .s-water{ background:url('waterproofing.png') center/cover no-repeat; }
+    .s-electric{ background:url('electric.png') center/cover no-repeat; }
+    .s-plumb{ background:url('plumbing.png') center/cover no-repeat; }
+    .s-wood{ background:url('carpenter.png') center/cover no-repeat; }
+    .s-false{ background:url('false ceilng.png') center/cover no-repeat; }
+    .s-tiling{ background:url('tile.png') center/cover no-repeat; }
+    .s-weld{ background:url('welding.png') center/cover no-repeat; }
+
+    .card {
+      background: var(--card);
+      border-radius: 10px;
+      padding: 18px;
+      box-shadow: 0 6px 18px rgba(10,20,34,0.06);
+      color: #111;
+    }
+
+    /* Contact */
+    .contact-wrap { display: grid; grid-template-columns: 1fr 420px; gap: 20px; align-items: start; margin-top: 18px; }
+    @media (max-width:980px){ .contact-wrap{ grid-template-columns:1fr; } }
+    form.contact {
+      background: var(--card);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(10,20,34,0.06);
+    }
+    form input, form textarea {
+      width: 100%; padding: 11px 12px; margin-bottom: 12px;
+      border-radius: 8px; border: 1px solid #e6e9ef; font-size: 0.95rem;
+    }
+    form button {
+      background: var(--accent); color: #fff; border: 0;
+      padding: 11px 14px; border-radius: 8px; cursor: pointer; font-weight: 600;
+    }
+    .contact-card {
+      background: var(--card);
+      padding: 18px;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(10,20,34,0.06);
+    }
+
+    /* Gallery */
+    .gallery { margin-top: 28px; display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; }
+    @media (max-width:1100px){ .gallery{ grid-template-columns:repeat(3,1fr); } }
+    @media (max-width:760px){ .gallery{ grid-template-columns:repeat(2,1fr); } }
+    .gallery img { width: 100%; height: 210px; object-fit: cover; border-radius: 8px; box-shadow: 0 6px 18px rgba(10,20,34,0.06); }
+
+    footer { background: var(--nav); color: #fff; text-align: center; padding: 14px; margin-top: 30px; }
+    .whatsapp {
+      position: fixed; right: 18px; bottom: 18px;
+      width: 60px; height: 60px; border-radius: 50%;
+      background: #25d366; display: flex; align-items: center; justify-content: center;
+      font-size: 28px; color: #fff; z-index: 90;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+      text-decoration: none;
+    }
+    .whatsapp:hover { transform: scale(1.05); }
+
+    ul.service-list { list-style: disc; margin-left: 18px; color: #333; }
+    .muted { color: var(--muted); }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#clients">Clients</a>
+    <a href="#gallery">Our Work</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <h1>SAHANI CIVIL CONSTRUCTION</h1>
+      <p>Building Trust Through Quality — Since <strong>1986</strong></p>
+      <p>GST: <strong>27DSJPS2144K1ZA</strong></p>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="wrap">
+      <h2 class="section">About Us</h2>
+      <p class="lead">Sahani Civil Construction is a trusted name in civil, structural, waterproofing, renovation, and turnkey interior projects. Established in 1986, we bring quality craftsmanship and engineering excellence to every project we undertake.</p>
+    </section>
+
+    <section id="services" class="wrap">
+      <h2 class="section">Our Core Services</h2>
+      <div class="services-grid">
+        <div class="service s-rcc"><div class="overlay"></div><div><h3>RCC & Structural Works</h3><p>Footings, columns, beams, slabs, staircases, shuttering, and reinforcement.</p></div></div>
+        <div class="service s-water"><div class="overlay"></div><div><h3>Waterproofing</h3><p>Terrace, toilet, tank waterproofing, coating, grouting & protection systems.</p></div></div>
+        <div class="service s-electric"><div class="overlay"></div><div><h3>Electrical Works</h3><p>Wiring, boards, earthing, lighting, panels, CCTV & fire systems.</p></div></div>
+        <div class="service s-plumb"><div class="overlay"></div><div><h3>Plumbing & Sanitary</h3><p>Water supply, drainage, sanitary fittings, tanks, pumps, RWH systems.</p></div></div>
+        <div class="service s-wood"><div class="overlay"></div><div><h3>Wood & Carpentry</h3><p>Furniture, doors, windows, modular cabinets, and finishing works.</p></div></div>
+        <div class="service s-false"><div class="overlay"></div><div><h3>False Ceiling & Interiors</h3><p>POP, gypsum, grid ceilings, partitions, wall finishes, lighting.</p></div></div>
+        <div class="service s-tiling"><div class="overlay"></div><div><h3>Flooring & Tiling</h3><p>Tile, marble, wooden flooring with professional installation.</p></div></div>
+        <div class="service s-weld"><div class="overlay"></div><div><h3>Fabrication & Welding</h3><p>Structural steel, railing, gates, staircases, on-site welding.</p></div></div>
+      </div>
+    </section>
+
+    <section id="clients" class="wrap">
+      <h2 class="section">Our Esteemed Clients</h2>
+      <p class="lead">Over the decades, we’ve proudly partnered with leading organizations and brands:</p>
+      <div class="card">
+        <ul class="service-list">
+          <li>Times of India</li>
+          <li>Bombay Gymkhana</li>
+          <li>Polvrini Unipatch Rubber Ltd</li>
+          <li>Vakrangee Ltd</li>
+          <li>Scantech Pvt Ltd</li>
+          <li>RepsIndia</li>
+          <li>Fattiger</li>
+          <li>Woodpecker</li>
+          <li>Voltas Ltd</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="gallery" class="wrap">
+      <h2 class="section">Our Work — Project Gallery</h2>
+      <div class="gallery">
+        <img src="download (1).jpeg" alt="foundation" />
+        <img src="download (2).jpeg" alt="RCC" />
+        <img src="download (3).jpeg" alt="infrastructure" />
+        <img src="download (4).jpeg" alt="construction site" />
+        <img src="download (5).jpeg" alt="highway" />
+        <img src="download (6).jpeg" alt="infrastructure chart" />
+        <img src="download (7).jpeg" alt="residential project" />
+        <img src="carpenter.png" alt="carpentry" />
+        <img src="electric.png" alt="electrical work" />
+        <img src="false ceilng.png" alt="false ceiling" />
+        <img src="painting.png" alt="painting" />
+        <img src="plumbing.png" alt="plumbing" />
+        <img src="rcc casting.png" alt="rcc casting" />
+        <img src="reinforcement steel.png" alt="steel" />
+        <img src="tile.png" alt="tile work" />
+        <img src="waterproofing.png" alt="waterproofing" />
+        <img src="welding.png" alt="welding" />
+      </div>
+    </section>
+
+    <section id="contact" style="background:#0b2a43; color:#fff; padding:44px 20px;">
+      <div class="wrap">
+        <h2 class="section" style="color:#fff;">Contact & Inquiry</h2>
+        <div class="contact-wrap">
+          <div class="contact-card">
+            <h3 style="margin-top:0">Registered Office</h3>
+            <p>Plot No. 350, Vashi, Thane 400703, Mumbai</p>
+            <p><strong>Email:</strong> <a href="mailto:mail@sccw.in">mail@sccw.in</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+918169990522">+91 8169990522</a></p>
+            <p><strong>Website:</strong> <a href="https://www.sccw.in" target="_blank">www.sccw.in</a></p>
+            <p><strong>GST:</strong> 27DSJPS2144K1ZA</p>
+            <p>Established since 1986</p>
+          </div>
+
+          <form class="contact" action="https://submit-form.com/YOUR_FORMSPARK_ID" method="POST">
+            <input name="name" type="text" placeholder="Your name" required>
+            <input name="email" type="email" placeholder="Email address" required>
+            <input name="phone" type="tel" placeholder="Phone / WhatsApp" required>
+            <input name="project_location" type="text" placeholder="Project location or site">
+            <textarea name="message" rows="5" placeholder="Brief project description / requirements" required></textarea>
+            <button type="submit">Send Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 1986–2025 Sahani Civil Construction • GST: 27DSJPS2144K1ZA • mail@sccw.in
+  </footer>
+
+  <a class="whatsapp" href="https://wa.me/918169990522?text=Hello%20Sahani%20Civil%20Construction%2C%20I%20have%20a%20project%20inquiry." target="_blank">💬</a>
+</body>
+</html>
