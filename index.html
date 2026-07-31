@@ -21,11 +21,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W36SXG8X1X">
-    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W36SXG8X1X"></script>
     <script async>
         window.dataLayer = window.dataLayer || [];
-
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-W36SXG8X1X');
@@ -360,7 +358,8 @@
             right: 0;
             width: 50%;
             height: 100%;
-            background: url('https://i.ibb.co/gbFkbsL9/brochure-image-9.png') right center/contain no-repeat;
+            object-fit: contain;
+            object-position: right center;
             opacity: .25;
             mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.9) 0%, transparent 100%);
             -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.9) 0%, transparent 100%)
@@ -1358,85 +1357,6 @@
             color: #aaa
         }
 
-        /* ---- MONSOON OFFER POPUP ---- */
-        .offer-popup .popup-box {
-            background: linear-gradient(145deg, #1a0e05, #2d1a0a);
-            border: 2px solid #c9a96e;
-            box-shadow: 0 0 60px rgba(201, 169, 110, 0.2);
-            position: relative;
-            overflow: visible;
-        }
-        .offer-popup .popup-box::before {
-            content: '🌧️';
-            position: absolute;
-            top: -20px;
-            right: -10px;
-            font-size: 3rem;
-            transform: rotate(15deg);
-            opacity: 0.3;
-        }
-        .offer-popup .popup-box::after {
-            content: '🌧️';
-            position: absolute;
-            bottom: -20px;
-            left: -10px;
-            font-size: 3rem;
-            transform: rotate(-15deg);
-            opacity: 0.3;
-        }
-        .offer-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #ff6b35, #f7931e);
-            color: #000;
-            font-weight: 900;
-            font-size: 2.2rem;
-            padding: 8px 24px;
-            border-radius: 60px;
-            margin-bottom: 10px;
-            box-shadow: 0 4px 30px rgba(255, 107, 53, 0.4);
-            letter-spacing: 0.05em;
-            font-family: Georgia, serif;
-        }
-        .offer-badge small {
-            font-size: 0.9rem;
-            font-weight: 700;
-            display: block;
-            margin-top: -4px;
-        }
-        .offer-popup .popup-box h3 {
-            font-size: 1.8rem;
-            color: #f5e6b8;
-            margin-bottom: 4px;
-        }
-        .offer-popup .popup-box .sub-text {
-            color: #d0c0b0;
-            font-size: 1rem;
-        }
-        .offer-popup .popup-box .btn-gold {
-            background: linear-gradient(135deg, #ff6b35, #f7931e);
-            color: #000;
-            font-weight: 800;
-            font-size: 1.1rem;
-            padding: 14px 40px;
-            box-shadow: 0 4px 30px rgba(255, 107, 53, 0.4);
-        }
-        .offer-popup .popup-box .btn-gold:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 40px rgba(255, 107, 53, 0.6);
-        }
-        .offer-popup .popup-box .skip-link {
-            color: #999;
-        }
-        .offer-popup .popup-box .skip-link:hover {
-            color: #ddd;
-        }
-        .offer-popup .popup-close {
-            color: #aaa;
-        }
-        .offer-popup .popup-close:hover {
-            color: #fff;
-        }
-
         .thankyou-overlay {
             display: none;
             position: fixed;
@@ -1803,8 +1723,8 @@
             .hero-bg .image {
                 width: 100%;
                 opacity: .15;
-                background-position: center;
-                background-size: cover
+                object-position: center;
+                object-fit: cover;
             }
         }
         @media(max-width:768px) {
@@ -1923,13 +1843,6 @@
                 font-size: .95rem;
                 padding: 14px;
                 min-height: 50px
-            }
-            .offer-badge {
-                font-size: 1.8rem;
-                padding: 6px 16px
-            }
-            .offer-popup .popup-box h3 {
-                font-size: 1.5rem
             }
             .workshop-info .name {
                 font-size: 1.3rem
@@ -2150,17 +2063,6 @@
                 width: 22px;
                 height: 22px
             }
-            .offer-badge {
-                font-size: 1.5rem;
-                padding: 4px 12px
-            }
-            .offer-popup .popup-box h3 {
-                font-size: 1.3rem
-            }
-            .offer-popup .popup-box .btn-gold {
-                font-size: 1rem;
-                padding: 12px 24px
-            }
             .workshop-info .name {
                 font-size: 1.1rem
             }
@@ -2222,12 +2124,6 @@
                 padding: 10px;
                 min-height: 40px
             }
-            .offer-badge {
-                font-size: 1.2rem
-            }
-            .offer-popup .popup-box h3 {
-                font-size: 1.1rem
-            }
         }
     </style>
 </head>
@@ -2258,27 +2154,6 @@
         });
     </script>
 
-    <!-- ===== MONSOON OFFER POPUP ===== -->
-    <div class="popup-overlay offer-popup" id="offerPopup">
-        <div class="popup-box">
-            <button class="popup-close" onclick="closeOfferPopup()">&times;</button>
-            <div style="text-align:center;">
-                <div class="offer-badge">
-                    50% OFF
-                    <small>Monsoon Flash Sale</small>
-                </div>
-            </div>
-            <h3>🌧️ Renovate &amp; Save Big!</h3>
-            <p class="sub-text">Get <strong>50% discount</strong> on total billing for any renovation or interior project. Offer valid for a limited time only.</p>
-            <div style="text-align:center; margin-top:8px;">
-                <button class="btn btn-gold" onclick="claimOffer()" style="background:linear-gradient(135deg,#ff6b35,#f7931e);color:#000;font-weight:800;font-size:1.1rem;padding:14px 40px;">
-                    Claim Offer Now
-                </button>
-            </div>
-            <span class="skip-link" onclick="closeOfferPopup()">No thanks, I'll browse</span>
-        </div>
-    </div>
-
     <!-- ===== MOBILE OVERLAY & MENU ===== -->
     <div class="mobile-overlay" id="mobileOverlay"></div>
     <div class="mobile-menu" id="mobileMenu">
@@ -2298,7 +2173,7 @@
     <nav class="navbar" id="navbar">
         <div class="container">
             <a href="#" class="nav-logo">
-                <img src="https://i.ibb.co/9kNbLWsr/logo-26-png.png" alt="SCCW Logo" loading="eager" width="55" height="55" referrerpolicy="no-referrer" />
+                <img src="https://i.ibb.co/9kNbLWsr/logo-26-png.png" alt="SCCW Logo" loading="eager" width="55" height="55" fetchpriority="high" decoding="async" referrerpolicy="no-referrer" />
                 <span>SCCW<small>Sahani Civil Construction Works</small></span>
             </a>
             <ul class="nav-links">
@@ -2325,7 +2200,7 @@
         <div class="hero-bg">
             <div class="glow"></div>
             <div class="glow2"></div>
-            <div class="image"></div>
+            <img src="https://i.ibb.co/gbFkbsL9/brochure-image-9.png" alt="SCCW Hero" class="image" fetchpriority="high" decoding="async" width="1200" height="800" referrerpolicy="no-referrer" />
             <div class="overlay"></div>
         </div>
         <div class="container">
@@ -2699,77 +2574,45 @@
         ];
 
         const portfolioData = [
-            { cat: "luxury-interior", img: "https://i.ibb.co/xSQ2hbs0/brochure-image-1.png", title: "Luxury 3BHK Interior",
-                type: "Luxury Flat Interior" },
-            { cat: "commercial", img: "https://i.ibb.co/9kVq6wv8/brochure-image-2.png", title: "Corporate Office",
-                type: "Commercial Office" },
-            { cat: "sales-office", img: "https://i.ibb.co/7trhw4x8/brochure-image-3.png", title: "Sales Office",
-                type: "Sales Office" },
-            { cat: "rcc", img: "https://i.ibb.co/kgq2Nfvx/brochure-image-4.png", title: "RCC Construction",
-                type: "RCC Construction" },
-            { cat: "waterproofing", img: "https://i.ibb.co/jvFsYdgV/brochure-image-5.png", title: "Waterproofing",
-                type: "Waterproofing" },
-            { cat: "renovation", img: "https://i.ibb.co/Tq7tzkbW/brochure-image-6.png", title: "Renovation",
-                type: "Renovation" },
-            { cat: "industrial", img: "https://i.ibb.co/NnxSrC1M/brochure-image-7.png", title: "Industrial Shed",
-                type: "Industrial" },
-            { cat: "structural", img: "https://i.ibb.co/DfPMNW7G/brochure-image-8.png", title: "MS Structure",
-                type: "Structural Work" }
+            { cat: "luxury-interior", img: "https://i.ibb.co/xSQ2hbs0/brochure-image-1.png", title: "Luxury 3BHK Interior", type: "Luxury Flat Interior" },
+            { cat: "commercial", img: "https://i.ibb.co/9kVq6wv8/brochure-image-2.png", title: "Corporate Office", type: "Commercial Office" },
+            { cat: "sales-office", img: "https://i.ibb.co/7trhw4x8/brochure-image-3.png", title: "Sales Office", type: "Sales Office" },
+            { cat: "rcc", img: "https://i.ibb.co/kgq2Nfvx/brochure-image-4.png", title: "RCC Construction", type: "RCC Construction" },
+            { cat: "waterproofing", img: "https://i.ibb.co/jvFsYdgV/brochure-image-5.png", title: "Waterproofing", type: "Waterproofing" },
+            { cat: "renovation", img: "https://i.ibb.co/Tq7tzkbW/brochure-image-6.png", title: "Renovation", type: "Renovation" },
+            { cat: "industrial", img: "https://i.ibb.co/NnxSrC1M/brochure-image-7.png", title: "Industrial Shed", type: "Industrial" },
+            { cat: "structural", img: "https://i.ibb.co/DfPMNW7G/brochure-image-8.png", title: "MS Structure", type: "Structural Work" }
         ];
 
         const ongoingData = [
-            { img: "https://i.ibb.co/wZpxNK7V/SCCW-Navi-Mumbai-Project-07.jpg", title: "SCCW Navi Mumbai Project 07",
-                type: "Live Construction" },
-            { img: "https://i.ibb.co/R4S0J80f/SCCW-Navi-Mumbai-Project-09.jpg", title: "SCCW Navi Mumbai Project 09",
-                type: "Live Construction" },
-            { img: "https://i.ibb.co/9knkN2PV/SCCW-Navi-Mumbai-Project-10.jpg", title: "SCCW Navi Mumbai Project 10",
-                type: "Live Construction" },
-            { img: "https://i.ibb.co/99qs6sF4/SCCW-Navi-Mumbai-Project-11.jpg", title: "SCCW Navi Mumbai Project 11",
-                type: "Live Construction" },
-            { img: "https://i.ibb.co/S7HQPbbb/SCCW-Navi-Mumbai-Project-12.jpg", title: "SCCW Navi Mumbai Project 12",
-                type: "Live Construction" },
-            { img: "https://i.ibb.co/M5cZLz1v/SCCW-Navi-Mumbai-Project-13.jpg", title: "SCCW Navi Mumbai Project 13",
-                type: "Live Construction" },
-            { img: "https://i.ibb.co/qMBLP1sb/SCCW-Navi-Mumbai-Project-14.jpg", title: "SCCW Navi Mumbai Project 14",
-                type: "Live Construction" },
-            { img: "https://i.ibb.co/5hyHys1x/SCCW-Navi-Mumbai-Project-15.jpg", title: "SCCW Navi Mumbai Project 15",
-                type: "Live Construction" },
-            { img: "https://i.ibb.co/sLwhmkc/SCCW-Navi-Mumbai-Project-16.jpg", title: "SCCW Navi Mumbai Project 16",
-                type: "Live Construction" },
-            { img: "https://i.ibb.co/zTTH6c6V/SCCW-Navi-Mumbai-Project-17.jpg", title: "SCCW Navi Mumbai Project 17",
-                type: "Live Construction" },
-            { img: "https://i.ibb.co/hxpCHvJB/SCCW-Navi-Mumbai-Project-18.jpg", title: "SCCW Navi Mumbai Project 18",
-                type: "Live Construction" },
-            { img: "https://i.ibb.co/TqrXXPxz/SCCW-Navi-Mumbai-Project-19.jpg", title: "SCCW Navi Mumbai Project 19",
-                type: "Live Construction" },
-            { img: "https://i.ibb.co/qMyRCv40/SCCW-Navi-Mumbai-Project-20.jpg", title: "SCCW Navi Mumbai Project 20",
-                type: "Live Construction" },
-            { img: "https://i.ibb.co/zHs53wQT/SCCW-Navi-Mumbai-Project-22.jpg", title: "SCCW Navi Mumbai Project 22",
-                type: "Live Construction" },
-            { img: "https://i.ibb.co/1YY5gLwp/SCCW-Navi-Mumbai-Project-23.jpg", title: "SCCW Navi Mumbai Project 23",
-                type: "Live Construction" },
-            { img: "https://i.ibb.co/cKRdnHgJ/SCCW-Navi-Mumbai-Project-24.jpg", title: "SCCW Navi Mumbai Project 24",
-                type: "Live Construction" }
+            { img: "https://i.ibb.co/wZpxNK7V/SCCW-Navi-Mumbai-Project-07.jpg", title: "SCCW Navi Mumbai Project 07", type: "Live Construction" },
+            { img: "https://i.ibb.co/R4S0J80f/SCCW-Navi-Mumbai-Project-09.jpg", title: "SCCW Navi Mumbai Project 09", type: "Live Construction" },
+            { img: "https://i.ibb.co/9knkN2PV/SCCW-Navi-Mumbai-Project-10.jpg", title: "SCCW Navi Mumbai Project 10", type: "Live Construction" },
+            { img: "https://i.ibb.co/99qs6sF4/SCCW-Navi-Mumbai-Project-11.jpg", title: "SCCW Navi Mumbai Project 11", type: "Live Construction" },
+            { img: "https://i.ibb.co/S7HQPbbb/SCCW-Navi-Mumbai-Project-12.jpg", title: "SCCW Navi Mumbai Project 12", type: "Live Construction" },
+            { img: "https://i.ibb.co/M5cZLz1v/SCCW-Navi-Mumbai-Project-13.jpg", title: "SCCW Navi Mumbai Project 13", type: "Live Construction" },
+            { img: "https://i.ibb.co/qMBLP1sb/SCCW-Navi-Mumbai-Project-14.jpg", title: "SCCW Navi Mumbai Project 14", type: "Live Construction" },
+            { img: "https://i.ibb.co/5hyHys1x/SCCW-Navi-Mumbai-Project-15.jpg", title: "SCCW Navi Mumbai Project 15", type: "Live Construction" },
+            { img: "https://i.ibb.co/sLwhmkc/SCCW-Navi-Mumbai-Project-16.jpg", title: "SCCW Navi Mumbai Project 16", type: "Live Construction" },
+            { img: "https://i.ibb.co/zTTH6c6V/SCCW-Navi-Mumbai-Project-17.jpg", title: "SCCW Navi Mumbai Project 17", type: "Live Construction" },
+            { img: "https://i.ibb.co/hxpCHvJB/SCCW-Navi-Mumbai-Project-18.jpg", title: "SCCW Navi Mumbai Project 18", type: "Live Construction" },
+            { img: "https://i.ibb.co/TqrXXPxz/SCCW-Navi-Mumbai-Project-19.jpg", title: "SCCW Navi Mumbai Project 19", type: "Live Construction" },
+            { img: "https://i.ibb.co/qMyRCv40/SCCW-Navi-Mumbai-Project-20.jpg", title: "SCCW Navi Mumbai Project 20", type: "Live Construction" },
+            { img: "https://i.ibb.co/zHs53wQT/SCCW-Navi-Mumbai-Project-22.jpg", title: "SCCW Navi Mumbai Project 22", type: "Live Construction" },
+            { img: "https://i.ibb.co/1YY5gLwp/SCCW-Navi-Mumbai-Project-23.jpg", title: "SCCW Navi Mumbai Project 23", type: "Live Construction" },
+            { img: "https://i.ibb.co/cKRdnHgJ/SCCW-Navi-Mumbai-Project-24.jpg", title: "SCCW Navi Mumbai Project 24", type: "Live Construction" }
         ];
 
         const testimonialsData = [
-            { stars: 5, text: "SCCW handled our entire building redevelopment with absolute professionalism. Truly Mumbai's best construction partner!",
-                author: "Rajesh B.", role: "Builder & Developer, Navi Mumbai" },
-            { stars: 5, text: "Got my 2BHK flat interior done by SCCW. Luxury finish at this price? Unbelievable. Highly recommended!",
-                author: "Priya M.", role: "Flat Owner, Andheri West" },
-            { stars: 5, text: "Corporate office in BKC completed in 45 days. Turnkey approach saved us massive time.",
-                author: "Amit K.", role: "Corporate Client, BKC Mumbai" },
-            { stars: 5, text: "Waterproofing done in 3 days before monsoon. No leakage since. Excellent!",
-                author: "Suresh G.", role: "Shop Owner, Thane" },
-            { stars: 5, text: "Society redevelopment was smooth with transparent pricing. Very satisfied.",
-                author: "Vijay D.", role: "Society Chairman, Panvel" },
-            { stars: 5, text: "Industrial shed in Taloja MIDC delivered ahead of schedule. Top quality.",
-                author: "Nitin S.", role: "Industrial Client, Taloja" }
+            { stars: 5, text: "SCCW handled our entire building redevelopment with absolute professionalism. Truly Mumbai's best construction partner!", author: "Rajesh B.", role: "Builder & Developer, Navi Mumbai" },
+            { stars: 5, text: "Got my 2BHK flat interior done by SCCW. Luxury finish at this price? Unbelievable. Highly recommended!", author: "Priya M.", role: "Flat Owner, Andheri West" },
+            { stars: 5, text: "Corporate office in BKC completed in 45 days. Turnkey approach saved us massive time.", author: "Amit K.", role: "Corporate Client, BKC Mumbai" },
+            { stars: 5, text: "Waterproofing done in 3 days before monsoon. No leakage since. Excellent!", author: "Suresh G.", role: "Shop Owner, Thane" },
+            { stars: 5, text: "Society redevelopment was smooth with transparent pricing. Very satisfied.", author: "Vijay D.", role: "Society Chairman, Panvel" },
+            { stars: 5, text: "Industrial shed in Taloja MIDC delivered ahead of schedule. Top quality.", author: "Nitin S.", role: "Industrial Client, Taloja" }
         ];
 
-        const clientsData = ["Google India", "Amazon", "Oracle", "Times of India", "Vakrangee Ltd",
-            "Unipatch Rubber Ltd", "Scantech Pvt Ltd", "Repsindia", "Woodpecker", "Fattiger", "Many More"
-        ];
+        const clientsData = ["Google India", "Amazon", "Oracle", "Times of India", "Vakrangee Ltd", "Unipatch Rubber Ltd", "Scantech Pvt Ltd", "Repsindia", "Woodpecker", "Fattiger", "Many More"];
 
         // ===== ICON MAP =====
         const iconMap = {
@@ -2793,41 +2636,19 @@
             'fa-check-double': '<svg viewBox="0 0 24 24"><path d="M18 7l-1.41-1.41-6.34 6.34 1.41 1.41L18 7zm4.24-1.41L11.66 16.17 7.48 12l-1.41 1.41L11.66 19l12-12-1.42-1.41zM.41 13.41L6 19l1.41-1.41L1.83 12 .41 13.41z"/></svg>'
         };
 
-        function getIconHTML(iconClass) {
-            return iconMap[iconClass] || '';
-        }
+        function getIconHTML(iconClass) { return iconMap[iconClass] || ''; }
 
         // ===== RENDER =====
-        document.getElementById('servicesGrid').innerHTML = servicesData.map(s =>
-            `<div class="service-card"><div class="icon">${getIconHTML(s.icon)}</div><h4>${s.title}</h4><p>${s.desc}</p></div>`
-        ).join('');
-
-        document.getElementById('whyGrid').innerHTML = whyData.map(i =>
-            `<div class="why-card"><div class="check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></div><div><h4>${i}</h4><p>Delivering excellence.</p></div></div>`
-        ).join('');
-
-        document.getElementById('portfolioGrid').innerHTML = portfolioData.map(p =>
-            `<div class="portfolio-card" data-category="${p.cat}"><div class="img"><img src="${p.img}" alt="${p.title}" loading="lazy" width="400" height="250" decoding="async" referrerpolicy="no-referrer"><div class="overlay"><span>View</span></div></div><div class="info"><h4>${p.title}</h4><span>${p.type}</span></div></div>`
-        ).join('');
-
-        // ===== RENDER ONGOING (with referrerpolicy fix) =====
-        document.getElementById('ongoingGrid').innerHTML = ongoingData.map(p =>
-            `<div class="ongoing-card"><div class="img"><img src="${p.img}" alt="${p.title}" loading="lazy" width="400" height="250" decoding="async" referrerpolicy="no-referrer"><div class="live-badge"><span class="dot-live"></span> LIVE</div></div><div class="info"><h4>${p.title}</h4><span>${p.type}</span></div></div>`
-        ).join('');
-
-        document.getElementById('testimonialsGrid').innerHTML = testimonialsData.map(t =>
-            `<div class="testimonial-card"><div class="stars">${'★'.repeat(t.stars)}</div><p>"${t.text}"</p><div class="author"><div class="avatar">${t.author.charAt(0)}</div><div><h5>${t.author}</h5><span>${t.role}</span></div></div></div>`
-        ).join('');
-
-        document.getElementById('clientGrid').innerHTML = clientsData.map(c =>
-            `<div class="client-item">${c}</div>`
-        ).join('');
+        document.getElementById('servicesGrid').innerHTML = servicesData.map(s => `<div class="service-card"><div class="icon">${getIconHTML(s.icon)}</div><h4>${s.title}</h4><p>${s.desc}</p></div>`).join('');
+        document.getElementById('whyGrid').innerHTML = whyData.map(i => `<div class="why-card"><div class="check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></div><div><h4>${i}</h4><p>Delivering excellence.</p></div></div>`).join('');
+        document.getElementById('portfolioGrid').innerHTML = portfolioData.map(p => `<div class="portfolio-card" data-category="${p.cat}"><div class="img"><img src="${p.img}" alt="${p.title}" loading="lazy" width="400" height="250" decoding="async" referrerpolicy="no-referrer"><div class="overlay"><span>View</span></div></div><div class="info"><h4>${p.title}</h4><span>${p.type}</span></div></div>`).join('');
+        document.getElementById('ongoingGrid').innerHTML = ongoingData.map(p => `<div class="ongoing-card"><div class="img"><img src="${p.img}" alt="${p.title}" loading="lazy" width="400" height="250" decoding="async" referrerpolicy="no-referrer"><div class="live-badge"><span class="dot-live"></span> LIVE</div></div><div class="info"><h4>${p.title}</h4><span>${p.type}</span></div></div>`).join('');
+        document.getElementById('testimonialsGrid').innerHTML = testimonialsData.map(t => `<div class="testimonial-card"><div class="stars">${'★'.repeat(t.stars)}</div><p>"${t.text}"</p><div class="author"><div class="avatar">${t.author.charAt(0)}</div><div><h5>${t.author}</h5><span>${t.role}</span></div></div></div>`).join('');
+        document.getElementById('clientGrid').innerHTML = clientsData.map(c => `<div class="client-item">${c}</div>`).join('');
 
         // ===== NAVBAR =====
         const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', function() {
-            navbar.classList.toggle('scrolled', window.scrollY > 40);
-        });
+        window.addEventListener('scroll', function() { navbar.classList.toggle('scrolled', window.scrollY > 40); });
 
         // ===== MOBILE MENU =====
         function toggleMenu() {
@@ -2839,7 +2660,6 @@
             overlay.classList.toggle('active');
             document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
         }
-
         function closeMenu() {
             document.getElementById('hamburger').classList.remove('active');
             document.getElementById('mobileMenu').classList.remove('active');
@@ -2848,39 +2668,28 @@
         }
         document.getElementById('mobileOverlay').addEventListener('click', closeMenu);
 
-        // ===== COUNTERS (animated) =====
+        // ===== COUNTERS =====
         function animateCounter(el, target) {
             let current = 0;
             const step = Math.ceil(target / 40);
             const interval = setInterval(() => {
                 current += step;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(interval);
-                }
+                if (current >= target) { current = target; clearInterval(interval); }
                 el.textContent = current + '+';
             }, 30);
         }
-
         const counterObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const el = entry.target;
                     const target = parseInt(el.getAttribute('data-target'));
-                    if (target) {
-                        animateCounter(el, target);
-                    }
-                    counterObserver.unobserve(el);
+                    if (target) { animateCounter(el, target); counterObserver.unobserve(el); }
                 }
             });
         }, { threshold: 0.5 });
-
         document.querySelectorAll('.stat-box .num, .counter-box .num').forEach(el => {
             const target = parseInt(el.getAttribute('data-target'));
-            if (target) {
-                el.textContent = '0';
-                counterObserver.observe(el);
-            }
+            if (target) { el.textContent = '0'; counterObserver.observe(el); }
         });
 
         // ===== FILTER TABS =====
@@ -2890,8 +2699,7 @@
                 this.classList.add('active');
                 const filter = this.getAttribute('data-filter');
                 document.querySelectorAll('.portfolio-card').forEach(card => {
-                    card.style.display = (filter === 'all' || card.getAttribute('data-category') === filter) ?
-                        'block' : 'none';
+                    card.style.display = (filter === 'all' || card.getAttribute('data-category') === filter) ? 'block' : 'none';
                 });
             });
         });
@@ -2904,10 +2712,7 @@
             btn.disabled = true;
             setTimeout(() => { e.target.submit(); }, 600);
         }
-
-        if (window.location.search.includes('submitted=true')) {
-            history.replaceState(null, '', window.location.pathname);
-        }
+        if (window.location.search.includes('submitted=true')) { history.replaceState(null, '', window.location.pathname); }
 
         // ===== SMOOTH SCROLL =====
         document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -2923,138 +2728,60 @@
                 }
             });
         });
-
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-        // ============================================================
-        // OFFER POPUP + INQUIRY POPUP SEQUENCING
-        // ============================================================
-        const offerPopup = document.getElementById('offerPopup');
+        // ===== INQUIRY POPUP =====
         const inquiryPopup = document.getElementById('popupOverlay');
         const thankyou = document.getElementById('thankyouOverlay');
         const inquiryForm = document.getElementById('inquiryForm');
-
-        function openOfferPopup() {
-            if (sessionStorage.getItem('offerShown')) return;
-            offerPopup.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            sessionStorage.setItem('offerShown', 'true');
-        }
-
-        function closeOfferPopup() {
-            offerPopup.classList.remove('active');
-            document.body.style.overflow = '';
-            setTimeout(function() {
-                openInquiryPopup();
-            }, 2000);
-        }
-
-        function claimOffer() {
-            offerPopup.classList.remove('active');
-            document.body.style.overflow = '';
-            openInquiryPopup();
-        }
-
         function openInquiryPopup() {
             if (sessionStorage.getItem('inquiryShown')) return;
             inquiryPopup.classList.add('active');
             document.body.style.overflow = 'hidden';
             sessionStorage.setItem('inquiryShown', 'true');
-            setTimeout(() => {
-                const input = document.getElementById('inqName');
-                if (input) input.focus();
-            }, 400);
+            setTimeout(() => { const input = document.getElementById('inqName'); if (input) input.focus(); }, 400);
         }
+        function closePopup() { inquiryPopup.classList.remove('active'); document.body.style.overflow = ''; }
+        window.openPopup = openInquiryPopup;
+        window.addEventListener('load', function() { setTimeout(openInquiryPopup, 2000); });
 
-        function closePopup() {
-            inquiryPopup.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        window.openPopup = function() {
-            if (!sessionStorage.getItem('offerShown')) {
-                openOfferPopup();
-            } else {
-                openInquiryPopup();
-            }
-        };
-
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                openOfferPopup();
-            }, 1500);
-        });
-
-        // ===== HANDLE INQUIRY =====
         function handleInquiry(e) {
             e.preventDefault();
-
             const name = document.getElementById('inqName').value.trim();
             const phone = document.getElementById('inqPhone').value.trim();
             const email = document.getElementById('inqEmail').value.trim();
             const subject = document.getElementById('inqSubject').value;
             const message = document.getElementById('inqMessage').value.trim();
-
-            if (!name) { alert('Please enter your full name.');
-                document.getElementById('inqName').focus(); return; }
-            if (!phone || phone.length < 10) { alert('Please enter a valid mobile number.');
-                document.getElementById('inqPhone').focus(); return; }
-            if (!subject) { alert('Please select a subject.');
-                document.getElementById('inqSubject').focus(); return; }
-            if (!message || message.length < 10) { alert('Please enter your message.');
-                document.getElementById('inqMessage').focus(); return; }
-
+            if (!name) { alert('Please enter your full name.'); document.getElementById('inqName').focus(); return; }
+            if (!phone || phone.length < 10) { alert('Please enter a valid mobile number.'); document.getElementById('inqPhone').focus(); return; }
+            if (!subject) { alert('Please select a subject.'); document.getElementById('inqSubject').focus(); return; }
+            if (!message || message.length < 10) { alert('Please enter your message.'); document.getElementById('inqMessage').focus(); return; }
             const btn = document.getElementById('inqSubmitBtn');
             const orig = btn.innerHTML;
             btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             btn.disabled = true;
-
             setTimeout(function() {
                 btn.innerHTML = '<i class="fas fa-check"></i> Sent!';
-                btn.style.background = '#25D366';
-                btn.style.color = '#fff';
-
+                btn.style.background = '#25D366'; btn.style.color = '#fff';
                 setTimeout(function() {
-                    btn.innerHTML = orig;
-                    btn.style.background = '';
-                    btn.style.color = '';
-                    btn.disabled = false;
-                    closePopup();
-                    inquiryForm.reset();
+                    btn.innerHTML = orig; btn.style.background = ''; btn.style.color = ''; btn.disabled = false;
+                    closePopup(); inquiryForm.reset();
                     thankyou.classList.add('active');
-                    setTimeout(function() {
-                        thankyou.classList.remove('active');
-                    }, 4000);
+                    setTimeout(function() { thankyou.classList.remove('active'); }, 4000);
                 }, 1500);
             }, 1200);
         }
-
-        function closeThankYou() {
-            thankyou.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-        thankyou.addEventListener('click', function(e) {
-            if (e.target === thankyou) closeThankYou();
-        });
-
-        offerPopup.addEventListener('click', function(e) {
-            if (e.target === offerPopup) closeOfferPopup();
-        });
-        inquiryPopup.addEventListener('click', function(e) {
-            if (e.target === inquiryPopup) closePopup();
-        });
-
+        function closeThankYou() { thankyou.classList.remove('active'); document.body.style.overflow = ''; }
+        thankyou.addEventListener('click', function(e) { if (e.target === thankyou) closeThankYou(); });
+        inquiryPopup.addEventListener('click', function(e) { if (e.target === inquiryPopup) closePopup(); });
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
-                if (offerPopup.classList.contains('active')) closeOfferPopup();
                 if (inquiryPopup.classList.contains('active')) closePopup();
                 if (thankyou.classList.contains('active')) closeThankYou();
             }
         });
 
-        // ============================================================
-        // CHATBOT
-        // ============================================================
+        // ===== CHATBOT =====
         const chatToggle = document.getElementById('chatToggle');
         const chatWindow = document.getElementById('chatWindow');
         const chatClose = document.getElementById('chatClose');
@@ -3063,7 +2790,6 @@
         const chatSend = document.getElementById('chatSend');
         const typingIndicator = document.getElementById('typingIndicator');
         const quickRepliesContainer = document.getElementById('quickReplies');
-
         let isChatOpen = false;
 
         const botResponses = [
@@ -3083,17 +2809,12 @@
             { keywords: ['site visit', 'inspection', 'measurement'], response: "📋 Site Visit — Free site visits across Mumbai, Navi Mumbai, Thane, Panvel & Pune. We inspect, understand requirements, take measurements & provide a detailed estimate. Call +91-8169990522 or fill the form above." },
             { keywords: ['ongoing', 'live', 'current', 'construction site', 'site update'], response: "🏗️ Ongoing Projects — We're currently executing multiple live projects across Navi Mumbai. Check out our 'Ongoing' section for real-time updates and site photos. Interested in visiting a site? We'd be happy to arrange a tour!" }
         ];
-
         const fallbackResponse = "Thank you for your message! 🙏 I'm here to help. Could you tell me more about what you're looking for? You can ask about services, pricing, locations, site visits, or call us at +91-8169990522 for immediate assistance.";
 
         function getBotReply(userMsg) {
             const lower = userMsg.toLowerCase().trim();
             if (!lower) return "Please type a message, and I'll be happy to assist you! 😊";
-            for (const item of botResponses) {
-                for (const kw of item.keywords) {
-                    if (lower.includes(kw)) return item.response;
-                }
-            }
+            for (const item of botResponses) { for (const kw of item.keywords) { if (lower.includes(kw)) return item.response; } }
             return fallbackResponse;
         }
 
@@ -3102,26 +2823,11 @@
             div.className = `msg ${sender}`;
             const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
             div.innerHTML = text.replace(/\n/g, '<br>') + `<span class="time">${time}</span>`;
-            if (delay) {
-                setTimeout(() => {
-                    chatMessages.appendChild(div);
-                    chatMessages.scrollTop = chatMessages.scrollHeight;
-                }, delay);
-            } else {
-                chatMessages.appendChild(div);
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            }
+            if (delay) { setTimeout(() => { chatMessages.appendChild(div); chatMessages.scrollTop = chatMessages.scrollHeight; }, delay); }
+            else { chatMessages.appendChild(div); chatMessages.scrollTop = chatMessages.scrollHeight; }
         }
-
-        function showTyping() {
-            typingIndicator.classList.add('active');
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-
-        function hideTyping() {
-            typingIndicator.classList.remove('active');
-        }
-
+        function showTyping() { typingIndicator.classList.add('active'); chatMessages.scrollTop = chatMessages.scrollHeight; }
+        function hideTyping() { typingIndicator.classList.remove('active'); }
         function sendUserMessage(text) {
             if (!text.trim()) return;
             addMessage(text, 'user');
@@ -3129,54 +2835,26 @@
             chatInput.focus();
             showTyping();
             const delay = 800 + Math.random() * 700;
-            setTimeout(() => {
-                hideTyping();
-                const reply = getBotReply(text);
-                addMessage(reply, 'bot');
-            }, delay);
+            setTimeout(() => { hideTyping(); const reply = getBotReply(text); addMessage(reply, 'bot'); }, delay);
         }
-
         function openChat() {
             if (isChatOpen) return;
             isChatOpen = true;
             chatWindow.classList.add('open');
             chatToggle.style.display = 'none';
-            if (chatMessages.children.length === 0) {
-                setTimeout(() => {
-                    addMessage("👋 Welcome to SCCW! I'm your virtual assistant. Ask me anything about our construction & interior services. Or use the quick buttons below.", 'bot');
-                }, 300);
-            }
+            if (chatMessages.children.length === 0) { setTimeout(() => { addMessage("👋 Welcome to SCCW! I'm your virtual assistant. Ask me anything about our construction & interior services. Or use the quick buttons below.", 'bot'); }, 300); }
         }
-
         function closeChat() {
             if (!isChatOpen) return;
             isChatOpen = false;
             chatWindow.classList.remove('open');
             chatToggle.style.display = 'flex';
         }
-
-        // Event listeners
         chatToggle.addEventListener('click', openChat);
         chatClose.addEventListener('click', closeChat);
-
-        chatSend.addEventListener('click', function() {
-            sendUserMessage(chatInput.value);
-        });
-
-        chatInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                sendUserMessage(chatInput.value);
-            }
-        });
-
-        quickRepliesContainer.addEventListener('click', function(e) {
-            if (e.target.classList.contains('quick-reply-btn')) {
-                const msg = e.target.getAttribute('data-msg');
-                sendUserMessage(msg);
-            }
-        });
+        chatSend.addEventListener('click', function() { sendUserMessage(chatInput.value); });
+        chatInput.addEventListener('keypress', function(e) { if (e.key === 'Enter') { e.preventDefault(); sendUserMessage(chatInput.value); } });
+        quickRepliesContainer.addEventListener('click', function(e) { if (e.target.classList.contains('quick-reply-btn')) { const msg = e.target.getAttribute('data-msg'); sendUserMessage(msg); } });
     </script>
-
 </body>
 </html>
