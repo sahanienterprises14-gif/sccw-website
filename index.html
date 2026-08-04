@@ -322,56 +322,28 @@
         }
 
         /* ===== HERO ===== */
-        .hero {
+        .hero-section {
+            position: relative;
+            overflow: hidden;
             min-height: 90vh;
             display: flex;
             align-items: center;
-            position: relative;
-            overflow: hidden;
             padding-top: 80px;
             background: #080605
         }
-        .hero-bg {
+        .hero-video {
             position: absolute;
             inset: 0;
-            z-index: 0
-        }
-.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;filter:brightness(.72);}
-.hero-bg .overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,.35));z-index:1;}
-
-        .hero-bg .glow {
-            position: absolute;
-            top: -30%;
-            right: -15%;
-            width: 70%;
-            height: 90%;
-            background: radial-gradient(ellipse at 70% 50%, rgba(201, 169, 110, 0.15) 0%, rgba(201, 169, 110, 0.05) 40%, transparent 70%)
-        }
-        .hero-bg .glow2 {
-            position: absolute;
-            bottom: -20%;
-            left: -10%;
-            width: 50%;
-            height: 60%;
-            background: radial-gradient(ellipse at 30% 80%, rgba(201, 169, 110, 0.06) 0%, transparent 60%)
-        }
-        .hero-bg .image {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 50%;
+            width: 100%;
             height: 100%;
-            object-fit: contain;
-            object-position: right center;
-            opacity: .25;
-            mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.9) 0%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.9) 0%, transparent 100%)
+            object-fit: cover;
+            z-index: -1;
         }
-        .hero-bg .overlay {
+        .hero-overlay {
             position: absolute;
             inset: 0;
-            background: radial-gradient(ellipse at center, rgba(8, 6, 5, 0.1) 0%, rgba(8, 6, 5, 0.85) 60%, #080605 100%);
-            z-index: 1
+            background: rgba(0, 0, 0, .45);
+            z-index: 0;
         }
         .hero-content {
             position: relative;
@@ -410,7 +382,8 @@
                 box-shadow: 0 0 0 6px transparent
             }
         }
-        .hero h1 {
+        .hero h1,
+        .hero-section h1 {
             font-family: Georgia, serif;
             font-size: clamp(2.4rem, 5.5vw, 4rem);
             font-weight: 700;
@@ -420,32 +393,37 @@
             letter-spacing: -0.02em;
             text-shadow: 0 2px 40px rgba(0, 0, 0, 0.4)
         }
-        .hero h1 .gold {
+        .hero h1 .gold,
+        .hero-section h1 .gold {
             background: linear-gradient(135deg, #c9a96e 0%, #f5e6b8 40%, #c9a96e 80%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             display: inline-block
         }
-        .hero .accent-line {
+        .hero .accent-line,
+        .hero-section .accent-line {
             display: flex;
             align-items: center;
             gap: 12px;
             margin: 16px 0 20px
         }
-        .hero .accent-line .line1 {
+        .hero .accent-line .line1,
+        .hero-section .accent-line .line1 {
             width: 60px;
             height: 2px;
             background: linear-gradient(90deg, #c9a96e, #f5e6b8);
             border-radius: 2px
         }
-        .hero .accent-line .line2 {
+        .hero .accent-line .line2,
+        .hero-section .accent-line .line2 {
             width: 24px;
             height: 2px;
             background: linear-gradient(90deg, #f5e6b8, transparent);
             border-radius: 2px
         }
-        .hero .accent-line .diamond {
+        .hero .accent-line .diamond,
+        .hero-section .accent-line .diamond {
             width: 8px;
             height: 8px;
             background: #c9a96e;
@@ -453,7 +431,8 @@
             flex-shrink: 0;
             opacity: .6
         }
-        .hero .subtitle {
+        .hero .subtitle,
+        .hero-section .subtitle {
             color: #c0b8b0;
             font-size: 1rem;
             max-width: 100%;
@@ -462,7 +441,8 @@
             font-weight: 400;
             letter-spacing: .01em
         }
-        .hero .tagline {
+        .hero .tagline,
+        .hero-section .tagline {
             font-family: Georgia, serif;
             font-size: 1.05rem;
             color: #c9a96e;
@@ -471,7 +451,8 @@
             opacity: .9;
             line-height: 1.6
         }
-        .hero .tagline .check {
+        .hero .tagline .check,
+        .hero-section .tagline .check {
             display: inline-block;
             margin-right: 4px
         }
@@ -1723,12 +1704,6 @@
             .footer-grid {
                 grid-template-columns: 1fr 1fr
             }
-            .hero-bg .image {
-                width: 100%;
-                opacity: .15;
-                object-position: center;
-                object-fit: cover;
-            }
         }
         @media(max-width:768px) {
             .nav-links {
@@ -1737,14 +1712,14 @@
             .hamburger {
                 display: flex
             }
-            .hero {
+            .hero-section {
                 min-height: auto;
                 padding: 100px 0 50px
             }
             .hero-content {
                 max-width: 100%
             }
-            .hero h1 {
+            .hero-section h1 {
                 font-size: 1.9rem
             }
             .hero-buttons .btn {
@@ -1869,7 +1844,7 @@
             .client-grid {
                 grid-template-columns: repeat(2, 1fr)
             }
-            .hero h1 {
+            .hero-section h1 {
                 font-size: 1.6rem
             }
             .btn {
@@ -2095,7 +2070,7 @@
             .client-grid {
                 grid-template-columns: repeat(2, 1fr)
             }
-            .hero h1 {
+            .hero-section h1 {
                 font-size: 1.4rem
             }
             .btn {
@@ -2199,13 +2174,11 @@
     <!-- ============================================================
     HERO
     ============================================================ -->
-    <section class="hero" id="home">
-        <div class="hero-bg">
-            <video class="hero-video" autoplay muted loop playsinline preload="metadata">
-                <source src="assets/videos/sccw-mumbai.mp4" type="video/mp4">
-            </video>
-            <div class="overlay"></div>
-        </div>
+    <section class="hero-section" id="home">
+        <video class="hero-video" autoplay muted loop playsinline preload="auto">
+            <source src="assets/videos/sccw-mumbai.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-badge"><span class="dot"></span> Mumbai • Navi Mumbai • Thane • Panvel</div>
