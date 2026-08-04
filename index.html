@@ -343,11 +343,9 @@
             opacity:1 !important;
             visibility:visible !important;
         }
+        /* The overlay has been removed as requested */
         .hero-overlay{
-            position:absolute;
-            inset:0;
-            background:rgba(0,0,0,.45);
-            z-index:1;
+            display:none; /* leftover rule – safe to ignore */
         }
         .hero-content{
             position:relative;
@@ -2174,13 +2172,13 @@
     </nav>
 
     <!-- ============================================================
-    HERO
+    HERO (without the black overlay)
     ============================================================ -->
     <section class="hero-section" id="home">
         <video class="hero-video" autoplay muted loop playsinline preload="auto">
             <source src="assets/videos/sccw-mumbai.mp4" type="video/mp4">
         </video>
-        <div class="hero-overlay"></div>
+        <!-- The overlay div is no longer present -->
         <div class="container">
             <div class="hero-content">
                 <div class="hero-badge"><span class="dot"></span> Mumbai • Navi Mumbai • Thane • Panvel</div>
@@ -2214,6 +2212,7 @@
         </div>
     </section>
 
+    <!-- Rest of the page remains the same -->
     <!-- ===== ABOUT ===== -->
     <section class="about-section section" id="about">
         <div class="container">
@@ -2241,6 +2240,8 @@
             </div>
         </div>
     </section>
+
+    <!-- ... rest of the sections remain unchanged ... -->
 
     <!-- ===== SERVICES ===== -->
     <section class="section" id="services">
