@@ -16,7 +16,6 @@
     <link rel="preconnect" href="https://images.unsplash.com" />
     <link rel="preconnect" href="https://i.ibb.co" />
     <link rel="preload" as="image" href="https://i.ibb.co/9kNbLWsr/logo-26-png.png" fetchpriority="high" />
-    <!-- Preload the cinematic background image -->
     <link rel="preload" as="image" href="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&q=80" fetchpriority="high" />
     <link rel="preload" as="image" href="https://i.ibb.co/R4jLXFVX/Chat-GPT-Image-Aug-9-2026-11-07-42-PM.png" fetchpriority="high" />
 
@@ -70,6 +69,33 @@
             --text-base: clamp(0.9rem, 1.2vw, 1.05rem);
             --text-heading: clamp(1.8rem, 4.5vw, 3.5rem);
             --text-subheading: clamp(1.3rem, 2.5vw, 2rem);
+        }
+
+        /* ---------- ECO-FRIENDLY MOTION PREFERENCES ---------- */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            .cinematic-bg {
+                animation: none !important;
+                transform: scale(1) !important;
+            }
+            .glow-orb,
+            .floating-whatsapp,
+            .hero-video {
+                animation: none !important;
+            }
+            .hero-video {
+                display: none !important;
+            }
+            .hero-section {
+                background: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&q=80') center/cover no-repeat;
+            }
         }
 
         html {
@@ -658,11 +684,6 @@
             grid-template-columns: repeat(3, 1fr);
             gap: var(--gap-base);
             margin-top: 1rem;
-        }
-        @media (max-width: 480px) {
-            .about-stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
         }
         .stat-box {
             background: rgba(0, 0, 0, 0.4);
@@ -1908,27 +1929,10 @@
             contain-intrinsic-size: auto 600px;
         }
 
-        /* ---------- RESPONSIVE OVERRIDES ---------- */
-        @media (max-width: 640px) {
-            .hero-buttons .btn {
-                width: 100%;
-                justify-content: center;
-            }
-            .accent-line .line1 {
-                width: 40px;
-            }
-            .accent-line .line2 {
-                width: 16px;
-            }
-            .container {
-                width: min(100% - 1.5rem, 1280px);
-            }
-            .hero-section .subtitle {
-                font-size: 0.9rem;
-            }
-            .hero-section .tagline {
-                font-size: 0.85rem;
-            }
+        /* ---------- RESPONSIVE OVERRIDES (Refined for Tablet/PC/Mobile) ---------- */
+
+        /* Tablet & Mobile Nav */
+        @media (max-width: 992px) {
             .nav-links {
                 display: none;
             }
@@ -1938,62 +1942,10 @@
             .mobile-menu {
                 max-width: 100%;
             }
-            .floating-call span {
-                display: none;
-            }
-            .floating-call {
-                right: 4.5rem;
-                padding: 0.5rem;
-                border-radius: 50%;
-                width: 44px;
-                height: 44px;
-                justify-content: center;
-            }
-            .floating-call svg {
-                margin: 0;
-            }
         }
 
-        @media (max-width: 480px) {
-            .hero-section h1 {
-                font-size: 1.8rem;
-            }
-            .section-title {
-                font-size: 1.5rem;
-            }
-            .about-stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .stat-box .num {
-                font-size: 1.4rem;
-            }
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-            .ongoing-grid {
-                grid-template-columns: 1fr;
-            }
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-            .client-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .counter-box .num {
-                font-size: 1.6rem;
-            }
-            .lead-form-wrapper {
-                padding: 1rem;
-            }
-            .popup-box {
-                padding: 1.5rem 1rem;
-            }
-        }
-
-        @media (min-width: 641px) and (max-width: 1024px) {
+        /* Tablet Specific Layouts */
+        @media (min-width: 768px) and (max-width: 1024px) {
             .services-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -2008,6 +1960,201 @@
             }
             .client-grid {
                 grid-template-columns: repeat(3, 1fr);
+            }
+            .about-stats {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .counters-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Small Tablet / Large Phone (Portrait) */
+        @media (max-width: 768px) {
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .about-stats {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .floating-call span {
+                display: none;
+            }
+            .floating-call {
+                width: 44px;
+                height: 44px;
+                padding: 0;
+                justify-content: center;
+                border-radius: 50%;
+                right: 70px;
+            }
+            .floating-whatsapp {
+                right: 16px;
+                width: 50px;
+                height: 50px;
+            }
+            .chat-toggle {
+                bottom: 80px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+            .chat-window {
+                bottom: 136px;
+                right: 12px;
+                max-width: calc(100vw - 24px);
+                max-height: 60vh;
+                border-radius: 16px;
+            }
+            .chat-messages {
+                min-height: 180px;
+                max-height: 35vh;
+                padding: 10px 12px;
+            }
+            .msg {
+                font-size: 0.78rem;
+                padding: 8px 12px;
+                max-width: 94%;
+            }
+            .container {
+                width: min(100% - 1.5rem, 1280px);
+            }
+            .hero-section .subtitle {
+                font-size: 0.9rem;
+            }
+            .hero-section .tagline {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Mobile Phones */
+        @media (max-width: 480px) {
+            .hero-section h1 {
+                font-size: 1.8rem;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .hero-buttons .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .accent-line .line1 {
+                width: 40px;
+            }
+            .accent-line .line2 {
+                width: 16px;
+            }
+
+            /* Grids to single column on mobile */
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            .ongoing-grid {
+                grid-template-columns: 1fr;
+            }
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            .client-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .about-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .counters-row {
+                grid-template-columns: 1fr 1fr;
+            }
+            .stat-box .num {
+                font-size: 1.4rem;
+            }
+            .counter-box .num {
+                font-size: 1.6rem;
+            }
+            .lead-form-wrapper {
+                padding: 1rem;
+            }
+            .popup-box {
+                padding: 1.5rem 1rem;
+            }
+            .floating-call {
+                right: 60px;
+                width: 44px;
+                height: 44px;
+            }
+            .floating-whatsapp {
+                right: 12px;
+                width: 44px;
+                height: 44px;
+            }
+            .chat-toggle {
+                bottom: 70px;
+                right: 12px;
+                width: 44px;
+                height: 44px;
+                font-size: 1.1rem;
+            }
+            .chat-window {
+                bottom: 116px;
+                right: 8px;
+                max-width: calc(100vw - 16px);
+                max-height: 55vh;
+                border-radius: 12px;
+            }
+            .chat-messages {
+                min-height: 140px;
+                max-height: 30vh;
+                padding: 8px 10px;
+            }
+            .msg {
+                font-size: 0.7rem;
+                padding: 6px 10px;
+                max-width: 96%;
+            }
+            .quick-reply-btn {
+                font-size: 0.6rem;
+                padding: 3px 10px;
+            }
+            .chat-input-area {
+                padding: 6px 10px 10px;
+                gap: 6px;
+            }
+            .chat-input-area input {
+                font-size: 0.75rem;
+                padding: 6px 10px;
+                min-height: 36px;
+            }
+            .chat-send-btn {
+                width: 36px;
+                height: 36px;
+                min-width: 36px;
+                font-size: 0.8rem;
+            }
+            .workshop-info .badges span {
+                font-size: 0.65rem;
+                padding: 4px 12px;
+            }
+            .hero-badge {
+                font-size: 0.65rem;
+                padding: 4px 14px;
+                flex-wrap: wrap;
+            }
+        }
+
+        /* Very Small Mobile (<= 360px) */
+        @media (max-width: 360px) {
+            .hero-section h1 {
+                font-size: 1.5rem;
+            }
+            .section-title {
+                font-size: 1.2rem;
+            }
+            .container {
+                width: min(100% - 1rem, 1280px);
             }
         }
     </style>
