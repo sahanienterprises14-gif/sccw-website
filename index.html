@@ -11,10 +11,11 @@
     <meta property="og:image" content="https://i.ibb.co/9kNbLWsr/logo-26-png.png" />
     <meta name="theme-color" content="#080605" />
 
-    <!-- PRELOADS -->
+    <!-- ===== OPTIMIZED PRELOADS & PRECONNECTS ===== -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
     <link rel="preconnect" href="https://i.ibb.co" />
     <link rel="preload" as="image" href="https://i.ibb.co/9kNbLWsr/logo-26-png.png" fetchpriority="high" />
+    <!-- Preload video poster or a placeholder image for hero -->
     <link rel="preload" as="image" href="https://i.ibb.co/R4jLXFVX/Chat-GPT-Image-Aug-9-2026-11-07-42-PM.png" fetchpriority="high" />
 
     <!-- Font Awesome (async) -->
@@ -33,8 +34,8 @@
 
     <link rel="icon" type="image/png" href="https://i.ibb.co/MbwpZmg/android-chrome-192x192.png" />
 
+    <!-- ===== CRITICAL CSS (Inlined) ===== -->
     <style>
-        /* ===== CRITICAL CSS ===== */
         * { margin:0; padding:0; box-sizing:border-box }
         body {
             background:#080605;
@@ -56,10 +57,7 @@
             font-weight:700;
             color:#fff;
             margin-bottom:10px;
-            letter-spacing:-0.01em;
-            word-wrap:break-word;
-            overflow-wrap:break-word;
-            max-width:100%
+            letter-spacing:-0.01em
         }
         .section-title .gold {
             background:linear-gradient(135deg,#c9a96e,#f5e6b8,#c9a96e);
@@ -68,8 +66,9 @@
             background-clip:text;
             display:inline-block
         }
-        .section-subtitle { color:#b0b0b0; font-size:1rem; max-width:600px; line-height:1.6; word-wrap:break-word; overflow-wrap:break-word; margin-left:auto; margin-right:auto }
+        .section-subtitle { color:#b0b0b0; font-size:1rem; max-width:600px; line-height:1.6 }
         .text-center { text-align:center }
+        .mx-auto { margin-left:auto; margin-right:auto }
         .btn {
             display:inline-flex; align-items:center; justify-content:center; gap:8px;
             padding:12px 28px; border-radius:50px; font-weight:600; font-size:.9rem;
@@ -141,15 +140,12 @@
         .hero-content{
             position:relative;
             z-index:2;
-            width:100%;
-            padding:20px;
         }
         .hero-badge {
             display:inline-flex; align-items:center; gap:8px;
             background:rgba(201,169,110,0.08); border:1px solid rgba(201,169,110,0.15);
             padding:6px 18px; border-radius:50px; font-size:.75rem; color:#c9a96e;
-            margin-bottom:20px; letter-spacing:.04em; backdrop-filter:blur(4px);
-            word-wrap:break-word
+            margin-bottom:20px; letter-spacing:.04em; backdrop-filter:blur(4px)
         }
         .hero-badge .dot { width:7px; height:7px; background:#25D366; border-radius:50%; animation:pulseDot 2s infinite; display:inline-block }
         @keyframes pulseDot {
@@ -158,27 +154,70 @@
         }
         .hero-section h1 {
             font-family:Georgia,serif; font-size:clamp(2.4rem,5.5vw,4rem); font-weight:700; color:#fff;
-            line-height:1.08; margin-bottom:8px; letter-spacing:-0.02em; text-shadow:0 2px 40px rgba(0,0,0,0.4);
-            word-wrap:break-word; overflow-wrap:break-word; max-width:100%
+            line-height:1.08; margin-bottom:8px; letter-spacing:-0.02em; text-shadow:0 2px 40px rgba(0,0,0,0.4)
         }
         .hero-section h1 .gold {
             background:linear-gradient(135deg,#c9a96e 0%,#f5e6b8 40%,#c9a96e 80%);
             -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; display:inline-block
         }
-        .accent-line { display:flex; align-items:center; gap:12px; margin:16px 0 20px; flex-wrap:wrap }
-        .accent-line .line1 { width:60px; height:2px; background:linear-gradient(90deg,#c9a96e,#f5e6b8); border-radius:2px; flex-shrink:0 }
-        .accent-line .line2 { width:24px; height:2px; background:linear-gradient(90deg,#f5e6b8,transparent); border-radius:2px; flex-shrink:0 }
+        .accent-line { display:flex; align-items:center; gap:12px; margin:16px 0 20px }
+        .accent-line .line1 { width:60px; height:2px; background:linear-gradient(90deg,#c9a96e,#f5e6b8); border-radius:2px }
+        .accent-line .line2 { width:24px; height:2px; background:linear-gradient(90deg,#f5e6b8,transparent); border-radius:2px }
         .accent-line .diamond { width:8px; height:8px; background:#c9a96e; transform:rotate(45deg); flex-shrink:0; opacity:.6 }
-        .hero-section .subtitle { color:#c0b8b0; font-size:1rem; max-width:100%; line-height:1.7; margin-bottom:12px; font-weight:400; letter-spacing:.01em; word-wrap:break-word; overflow-wrap:break-word }
-        .hero-section .tagline { font-family:Georgia,serif; font-size:1.05rem; color:#c9a96e; margin-bottom:28px; letter-spacing:.02em; opacity:.9; line-height:1.6; word-wrap:break-word; overflow-wrap:break-word; max-width:100% }
+        .hero-section .subtitle { color:#c0b8b0; font-size:1rem; max-width:100%; line-height:1.7; margin-bottom:12px; font-weight:400; letter-spacing:.01em }
+        .hero-section .tagline { font-family:Georgia,serif; font-size:1.05rem; color:#c9a96e; margin-bottom:28px; letter-spacing:.02em; opacity:.9; line-height:1.6 }
         .hero-section .tagline .check { display:inline-block; margin-right:4px }
-        .hero-buttons { display:flex; flex-wrap:wrap; gap:12px; width:100% }
+        .hero-buttons { display:flex; flex-wrap:wrap; gap:12px }
 
-        /* ===== ABOUT SECTION ===== */
+        /* responsive */
+        @media(max-width:768px) {
+            .nav-links { display:none } .hamburger { display:flex }
+            .hero-section { min-height:auto; padding:100px 0 50px }
+            .hero-content { max-width:100% }
+            .hero-section h1 { font-size:1.9rem }
+            .hero-buttons .btn { width:100%; justify-content:center }
+            .hero-buttons { gap:8px }
+            .section { padding:40px 0 }
+            .section-title { font-size:1.6rem }
+        }
+        @media(max-width:480px) {
+            .hero-section h1 { font-size:1.6rem }
+            .btn { font-size:.8rem; padding:10px 16px; min-height:40px }
+            .section-title { font-size:1.3rem }
+        }
+
+        /* ===== CONTENT-VISIBILITY FOR SPEED ===== */
+        .about-section,
+        #services,
+        .why-section,
+        #portfolio,
+        #ongoing,
+        #clients,
+        #testimonials,
+        #lead-form,
+        #contact,
+        .workshop-img,
+        .workshop-info,
+        .footer {
+            content-visibility: auto;
+            contain-intrinsic-size: 600px;
+        }
+        .about-section { contain-intrinsic-size: 700px; }
+        #services { contain-intrinsic-size: 800px; }
+        #portfolio { contain-intrinsic-size: 900px; }
+        #ongoing { contain-intrinsic-size: 800px; }
+        #testimonials { contain-intrinsic-size: 700px; }
+        #lead-form { contain-intrinsic-size: 800px; }
+        .footer { contain-intrinsic-size: 400px; }
+    </style>
+
+    <!-- ===== NON-CRITICAL CSS (deferred) ===== -->
+    <style media="print" onload="this.media='all'">
+        /* ABOUT */
         .about-section { background:rgba(13,10,8,0.6); backdrop-filter:blur(2px) }
         .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center }
-        .about-image { aspect-ratio:4/3; background:#141110; border-radius:16px; border:1px solid rgba(201,169,110,0.12); overflow:hidden; position:relative; width:100% }
-        .about-image img { width:100%; height:100%; object-fit:cover; opacity:.85; display:block }
+        .about-image { aspect-ratio:4/3; background:#141110; border-radius:16px; border:1px solid rgba(201,169,110,0.12); overflow:hidden; position:relative }
+        .about-image img { width:100%; height:100%; object-fit:cover; opacity:.85 }
         .about-image .corner { position:absolute; width:40px; height:40px; border-color:#c9a96e; border-style:solid; border-width:0; pointer-events:none; opacity:.5 }
         .about-image .corner.tl { top:16px; left:16px; border-top-width:2px; border-left-width:2px; border-radius:6px 0 0 0 }
         .about-image .corner.br { bottom:16px; right:16px; border-bottom-width:2px; border-right-width:2px; border-radius:0 0 6px 0 }
@@ -187,18 +226,17 @@
         .stat-box:hover { border-color:rgba(201,169,110,0.2) }
         .stat-box .num { font-family:Georgia,serif; font-size:1.6rem; font-weight:700; background:linear-gradient(135deg,#c9a96e,#f5e6b8); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text }
         .stat-box .label { font-size:.7rem; color:#888; text-transform:uppercase; letter-spacing:.04em }
-        .highlight-box { background:rgba(201,169,110,0.06); border-left:3px solid #c9a96e; padding:14px 18px; border-radius:0 10px 10px 0; margin:16px 0; font-family:Georgia,serif; font-weight:600; color:#e8d5a3; font-size:1rem; backdrop-filter:blur(4px); word-wrap:break-word }
-        .about-text p { color:#b0b0b0; font-size:.95rem; line-height:1.6; word-wrap:break-word }
+        .highlight-box { background:rgba(201,169,110,0.06); border-left:3px solid #c9a96e; padding:14px 18px; border-radius:0 10px 10px 0; margin:16px 0; font-family:Georgia,serif; font-weight:600; color:#e8d5a3; font-size:1rem; backdrop-filter:blur(4px) }
 
-        /* ===== SERVICE GRID ===== */
+        /* GRIDS */
         .services-grid,.why-grid,.portfolio-grid,.ongoing-grid,.client-grid,.testimonials-grid { display:grid; gap:14px; margin-top:24px }
         .services-grid { grid-template-columns:repeat(auto-fill,minmax(230px,1fr)) }
-        .service-card { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.04); border-radius:16px; padding:22px 18px; transition:.2s; backdrop-filter:blur(4px); word-wrap:break-word }
+        .service-card { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.04); border-radius:16px; padding:22px 18px; transition:.2s; backdrop-filter:blur(4px) }
         .service-card:hover { border-color:rgba(201,169,110,0.25); transform:translateY(-4px); box-shadow:0 12px 40px rgba(0,0,0,0.3); background:rgba(255,255,255,0.05) }
-        .service-card .icon { width:44px; height:44px; border-radius:12px; background:rgba(201,169,110,0.1); display:flex; align-items:center; justify-content:center; margin:0 auto 10px }
+        .service-card .icon { width:44px; height:44px; border-radius:12px; background:rgba(201,169,110,0.1); display:flex; align-items:center; justify-content:center; margin-bottom:10px }
         .service-card .icon svg { width:22px; height:22px; fill:#c9a96e }
-        .service-card h4 { font-weight:600; font-size:.95rem; color:#fff; margin-bottom:4px; text-align:center }
-        .service-card p { font-size:.8rem; color:#888; text-align:center }
+        .service-card h4 { font-weight:600; font-size:.95rem; color:#fff; margin-bottom:4px }
+        .service-card p { font-size:.8rem; color:#888 }
 
         .why-grid { grid-template-columns:repeat(auto-fill,minmax(200px,1fr)) }
         .why-card { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.04); border-radius:12px; padding:16px 14px; display:flex; align-items:flex-start; gap:12px; backdrop-filter:blur(4px); transition:.15s }
@@ -221,8 +259,8 @@
         .portfolio-grid { grid-template-columns:repeat(auto-fill,minmax(270px,1fr)) }
         .portfolio-card { background:rgba(255,255,255,0.03); border-radius:16px; overflow:hidden; border:1px solid rgba(255,255,255,0.04); transition:.15s; backdrop-filter:blur(4px) }
         .portfolio-card:hover { transform:translateY(-4px); border-color:rgba(201,169,110,0.2); box-shadow:0 12px 40px rgba(0,0,0,0.3) }
-        .portfolio-card .img { aspect-ratio:16/10; overflow:hidden; position:relative; width:100% }
-        .portfolio-card .img img { width:100%; height:100%; object-fit:cover; opacity:.7; transition:.15s; display:block }
+        .portfolio-card .img { aspect-ratio:16/10; overflow:hidden; position:relative }
+        .portfolio-card .img img { width:100%; height:100%; object-fit:cover; opacity:.7; transition:.15s }
         .portfolio-card:hover .img img { opacity:1 }
         .portfolio-card .img .overlay { position:absolute; inset:0; background:rgba(0,0,0,0.5); display:flex; align-items:center; justify-content:center; opacity:0; transition:.15s }
         .portfolio-card:hover .img .overlay { opacity:1 }
@@ -231,12 +269,12 @@
         .portfolio-card .info h4 { font-weight:600; font-size:.9rem; color:#fff }
         .portfolio-card .info span { font-size:.7rem; color:#c9a96e }
 
-        .ongoing-section { background:rgba(13,10,8,0.4) }
+        .ongoing-section { background:rgba(13,10,8,0.4); content-visibility:auto; contain-intrinsic-size:600px }
         .ongoing-grid { grid-template-columns:repeat(auto-fill,minmax(260px,1fr)) }
         .ongoing-card { background:rgba(255,255,255,0.03); border-radius:16px; overflow:hidden; border:1px solid rgba(255,255,255,0.04); transition:.15s; backdrop-filter:blur(4px); position:relative }
         .ongoing-card:hover { transform:translateY(-4px); border-color:rgba(201,169,110,0.25); box-shadow:0 12px 40px rgba(0,0,0,0.3) }
-        .ongoing-card .img { aspect-ratio:16/10; overflow:hidden; position:relative; width:100% }
-        .ongoing-card .img img { width:100%; height:100%; object-fit:cover; opacity:.8; transition:.15s; display:block }
+        .ongoing-card .img { aspect-ratio:16/10; overflow:hidden; position:relative }
+        .ongoing-card .img img { width:100%; height:100%; object-fit:cover; opacity:.8; transition:.15s }
         .ongoing-card:hover .img img { opacity:1; transform:scale(1.02) }
         .ongoing-card .img .live-badge { position:absolute; top:12px; left:12px; background:#e74c3c; color:#fff; font-size:.6rem; font-weight:700; padding:4px 12px; border-radius:50px; letter-spacing:.05em; text-transform:uppercase; animation:pulseLive 1.8s infinite; display:flex; align-items:center; gap:6px; z-index:2 }
         .ongoing-card .img .live-badge .dot-live { width:8px; height:8px; background:#fff; border-radius:50%; display:inline-block; animation:blinkDot 1.2s infinite }
@@ -254,9 +292,9 @@
         .testimonial-card { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.04); border-radius:16px; padding:20px; backdrop-filter:blur(4px); transition:.15s }
         .testimonial-card:hover { border-color:rgba(201,169,110,0.15) }
         .testimonial-card .stars { color:#c9a96e; font-size:.9rem; margin-bottom:6px }
-        .testimonial-card p { color:#c0b8b0; font-style:italic; font-size:.9rem; line-height:1.5; word-wrap:break-word }
+        .testimonial-card p { color:#c0b8b0; font-style:italic; font-size:.9rem; line-height:1.5 }
         .testimonial-card .author { display:flex; align-items:center; gap:12px; margin-top:12px }
-        .testimonial-card .author .avatar { width:36px; height:36px; border-radius:50%; background:rgba(201,169,110,0.12); display:flex; align-items:center; justify-content:center; font-weight:700; color:#c9a96e; font-size:.8rem; flex-shrink:0 }
+        .testimonial-card .author .avatar { width:36px; height:36px; border-radius:50%; background:rgba(201,169,110,0.12); display:flex; align-items:center; justify-content:center; font-weight:700; color:#c9a96e; font-size:.8rem }
         .testimonial-card .author h5 { font-size:.85rem; color:#fff }
         .testimonial-card .author span { font-size:.7rem; color:#888 }
 
@@ -269,7 +307,6 @@
         .form-group input:focus,.form-group select:focus,.form-group textarea:focus { border-color:#c9a96e; box-shadow:0 0 0 3px rgba(201,169,110,0.1) }
         .form-group textarea { resize:vertical; min-height:80px }
         .form-group select { appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 14px center; padding-right:40px }
-        .form-submit-btn { width:100%; padding:14px; background:linear-gradient(135deg,#c9a96e,#d4af37); color:#000; border:none; border-radius:50px; font-weight:700; font-size:.95rem; cursor:pointer; transition:.2s; min-height:48px }
 
         .contact-list { display:flex; flex-direction:column; gap:12px; margin-top:20px }
         .contact-item { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.04); border-radius:16px; padding:16px 20px; display:flex; align-items:center; gap:14px; backdrop-filter:blur(4px); transition:.15s }
@@ -277,20 +314,20 @@
         .contact-item .icon { width:40px; height:40px; min-width:40px; border-radius:50%; background:rgba(201,169,110,0.08); display:flex; align-items:center; justify-content:center }
         .contact-item .icon svg { width:18px; height:18px; fill:#c9a96e }
         .contact-item h4 { font-size:.85rem; color:#fff }
-        .contact-item span,.contact-item a { font-size:.85rem; color:#b0b0b0; text-decoration:none; word-wrap:break-word }
+        .contact-item span,.contact-item a { font-size:.85rem; color:#b0b0b0; text-decoration:none }
         .contact-item a:hover { color:#c9a96e }
 
         .workshop-img { width:100%; line-height:0 }
         .workshop-img img { width:100%; height:auto; display:block; opacity:.9 }
         .workshop-info { background:rgba(13,10,8,0.6); padding:30px 20px; text-align:center; border-bottom:1px solid rgba(255,255,255,0.04); backdrop-filter:blur(4px) }
-        .workshop-info .name { font-family:Georgia,serif; font-size:1.6rem; font-weight:700; color:#fff; margin-bottom:14px; letter-spacing:.04em; word-wrap:break-word }
+        .workshop-info .name { font-family:Georgia,serif; font-size:1.6rem; font-weight:700; color:#fff; margin-bottom:14px; letter-spacing:.04em }
         .workshop-info .badges { display:flex; justify-content:center; gap:12px; flex-wrap:wrap }
         .workshop-info .badges span { background:rgba(255,255,255,0.04); border:1px solid rgba(201,169,110,0.1); border-radius:50px; padding:6px 18px; font-size:.8rem; color:#c9a96e; display:inline-flex; align-items:center; gap:8px; backdrop-filter:blur(4px) }
 
         .footer { background:rgba(8,6,5,0.8); padding:40px 0 20px; border-top:1px solid rgba(255,255,255,0.03) }
         .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1.5fr; gap:30px }
         .footer h4 { font-size:.85rem; color:#fff; margin-bottom:12px; letter-spacing:.04em }
-        .footer a { color:#888; font-size:.8rem; display:block; margin-bottom:4px; transition:.15s; word-wrap:break-word }
+        .footer a { color:#888; font-size:.8rem; display:block; margin-bottom:4px; transition:.15s }
         .footer a:hover { color:#c9a96e }
         .footer .social-icons { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px }
         .footer .social-icons a { width:40px; height:40px; border-radius:50%; background:rgba(255,255,255,0.04); border:1px solid rgba(201,169,110,0.08); display:flex; align-items:center; justify-content:center; transition:.15s; margin:0 }
@@ -300,7 +337,7 @@
         .footer-bottom { font-size:.7rem; color:#666; text-align:center; margin-top:24px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.04) }
         .footer-bottom a { display:inline; color:#c9a96e }
 
-        /* ===== POPUPS ===== */
+        /* POPUPS */
         .popup-overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(8,6,5,0.92); z-index:999999; display:none; align-items:center; justify-content:center; padding:20px; backdrop-filter:blur(8px) }
         .popup-overlay.active { display:flex }
         .popup-box { background:#141110; border:1px solid rgba(201,169,110,0.15); border-radius:28px; padding:38px 32px; max-width:480px; width:100%; max-height:92vh; overflow-y:auto; position:relative; box-shadow:0 30px 80px rgba(0,0,0,0.8); animation:popIn .35s ease }
@@ -331,7 +368,7 @@
         .thankyou-box h3 { font-family:Georgia,serif; font-size:1.6rem; color:#fff }
         .thankyou-box p { color:#b0b0b0; margin:10px 0 20px; font-size:1rem }
 
-        /* ===== CHATBOT ===== */
+        /* CHATBOT */
         .chat-toggle { position:fixed; bottom:24px; right:20px; width:58px; height:58px; border-radius:50%; background:linear-gradient(135deg,#c9a96e,#d4af37); color:#000; border:none; box-shadow:0 6px 30px rgba(201,169,110,0.4); cursor:pointer; z-index:99950; display:flex; align-items:center; justify-content:center; font-size:1.6rem; transition:.15s }
         .chat-toggle:hover { transform:scale(1.06) }
         .chat-toggle .badge { position:absolute; top:4px; right:4px; width:14px; height:14px; background:#25D366; border-radius:50%; border:2px solid #080605 }
@@ -339,7 +376,7 @@
         .chat-window.open { display:flex }
         .chat-header { padding:14px 18px; background:rgba(255,255,255,0.03); border-bottom:1px solid rgba(255,255,255,0.04); display:flex; align-items:center; justify-content:space-between }
         .chat-header .left { display:flex; align-items:center; gap:10px }
-        .chat-header .left .avatar { width:34px; height:34px; border-radius:50%; background:#c9a96e; display:flex; align-items:center; justify-content:center; font-weight:700; color:#000; font-size:.8rem; flex-shrink:0 }
+        .chat-header .left .avatar { width:34px; height:34px; border-radius:50%; background:#c9a96e; display:flex; align-items:center; justify-content:center; font-weight:700; color:#000; font-size:.8rem }
         .chat-header .left .info h4 { font-size:.85rem; font-weight:600; color:#fff }
         .chat-header .left .info span { font-size:.65rem; color:#888 }
         .chat-header .left .info span .dot { display:inline-block; width:7px; height:7px; background:#25D366; border-radius:50%; margin-right:4px }
@@ -366,7 +403,7 @@
         .chat-send-btn { width:44px; height:44px; min-width:44px; border-radius:50%; background:#c9a96e; color:#000; border:none; font-size:1rem; cursor:pointer; transition:.15s; display:flex; align-items:center; justify-content:center }
         .chat-send-btn:hover { background:#d4af37 }
 
-        /* ===== FLOATING BUTTONS ===== */
+        /* FLOATING BUTTONS */
         .floating-whatsapp { position:fixed; bottom:calc(24px + env(safe-area-inset-bottom)); right:20px; width:54px; height:54px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:9990; box-shadow:0 6px 25px rgba(37,211,102,0.4); animation:floatBounce 2s infinite; text-decoration:none }
         .floating-whatsapp:hover { transform:scale(1.1) }
         .floating-whatsapp svg { width:28px; height:28px; fill:#fff }
@@ -375,22 +412,11 @@
         .floating-call:hover { transform:scale(1.05); background:#d4af37 }
         .floating-call svg { width:20px; height:20px; fill:#000; flex-shrink:0 }
 
-        /* ===== RESPONSIVE ===== */
-        @media(max-width:992px) {
-            .about-grid,.lead-grid { grid-template-columns:1fr }
-            .footer-grid { grid-template-columns:1fr 1fr }
-        }
+        /* RESPONSIVE */
+        @media(max-width:992px) { .about-grid,.lead-grid { grid-template-columns:1fr } .footer-grid { grid-template-columns:1fr 1fr } }
         @media(max-width:768px) {
-            .nav-links { display:none } .hamburger { display:flex }
-            .hero-section { min-height:auto; padding:100px 0 50px }
-            .hero-content { max-width:100%; padding:10px }
-            .hero-section h1 { font-size:1.9rem }
-            .hero-buttons .btn { width:100%; justify-content:center }
-            .hero-buttons { gap:8px }
-            .section { padding:40px 0 }
-            .section-title { font-size:1.6rem }
             .counters-row { grid-template-columns:repeat(2,1fr) }
-            .services-grid,.why-grid,.portfolio-grid,.ongoing-grid { grid-template-columns:1fr 1fr; gap:12px }
+            .services-grid,.why-grid,.portfolio-grid,.ongoing-grid { grid-template-columns:1fr 1fr; gap:10px }
             .service-card { padding:16px 12px } .service-card h4 { font-size:.8rem }
             .testimonials-grid { grid-template-columns:1fr }
             .client-grid { grid-template-columns:repeat(3,1fr) }
@@ -402,71 +428,27 @@
             .chat-window { bottom:136px; right:12px; max-width:calc(100vw - 24px); max-height:60vh; border-radius:16px }
             .chat-messages { min-height:180px; max-height:35vh; padding:10px 12px }
             .msg { font-size:.78rem; padding:8px 12px; max-width:94% }
-            .about-stats { grid-template-columns:repeat(3,1fr) }
-            .container { padding:0 16px }
         }
         @media(max-width:480px) {
-            .hero-section h1 { font-size:1.6rem }
-            .btn { font-size:.8rem; padding:10px 16px; min-height:40px; width:100% }
-            .section-title { font-size:1.3rem }
-            /* SINGLE COLUMN ON PHONES */
-            .services-grid,.why-grid,.portfolio-grid,.ongoing-grid { grid-template-columns:1fr; gap:12px }
+            .services-grid,.why-grid,.portfolio-grid,.ongoing-grid { grid-template-columns:1fr 1fr; gap:8px }
             .counters-row { grid-template-columns:1fr 1fr }
             .client-grid { grid-template-columns:repeat(2,1fr) }
-            .about-stats { grid-template-columns:1fr 1fr; gap:8px }
-            .stat-box { padding:12px 6px } .stat-box .num { font-size:1.2rem } .stat-box .label { font-size:.55rem }
-            .service-card { padding:14px 12px } .service-card h4 { font-size:.8rem } .service-card p { font-size:.7rem } .service-card .icon { width:36px; height:36px } .service-card .icon svg { width:20px; height:20px }
-            .why-card { padding:10px 8px } .why-card h4 { font-size:.75rem } .why-card p { font-size:.6rem } .why-card .check { width:26px; height:26px; min-width:26px }
-            .portfolio-card .info,.ongoing-card .info { padding:10px 12px } .portfolio-card .info h4,.ongoing-card .info h4 { font-size:.8rem } .portfolio-card .info span,.ongoing-card .info span { font-size:.65rem }
+            .about-stats { grid-template-columns:repeat(3,1fr); gap:6px }
+            .stat-box { padding:10px 4px } .stat-box .num { font-size:1.2rem } .stat-box .label { font-size:.55rem }
+            .service-card { padding:12px 10px } .service-card h4 { font-size:.7rem } .service-card p { font-size:.6rem } .service-card .icon { width:32px; height:32px } .service-card .icon svg { width:18px; height:18px }
+            .why-card { padding:10px 8px } .why-card h4 { font-size:.75rem } .why-card p { font-size:.6rem } .why-card .check { width:24px; height:24px; min-width:24px }
+            .portfolio-card .info,.ongoing-card .info { padding:10px 12px } .portfolio-card .info h4,.ongoing-card .info h4 { font-size:.75rem } .portfolio-card .info span,.ongoing-card .info span { font-size:.6rem }
             .ongoing-card .img .live-badge { font-size:.5rem; padding:3px 10px; top:8px; left:8px }
-            .filter-tab { font-size:.65rem; padding:6px 14px; min-height:32px }
+            .filter-tab { font-size:.6rem; padding:4px 12px; min-height:30px }
             .counter-box .num { font-size:1.4rem } .counter-box .label { font-size:.6rem }
-            .lead-form-wrapper { padding:16px 12px }
-            .form-group input,.form-group select,.form-group textarea { font-size:.8rem; padding:10px 12px; min-height:40px }
-            .form-submit-btn { font-size:.8rem; min-height:44px; padding:10px }
-            .contact-item { padding:12px 14px; flex-wrap:wrap }
-            .contact-item .icon { width:34px; height:34px; min-width:34px } .contact-item .icon svg { width:16px; height:16px }
-            .contact-item h4 { font-size:.75rem } .contact-item span,.contact-item a { font-size:.75rem }
+            .lead-form-wrapper { padding:16px 12px } .form-group input,.form-group select,.form-group textarea { font-size:.8rem; padding:8px 10px; min-height:38px } .form-submit-btn { font-size:.8rem; min-height:42px; padding:10px }
+            .contact-item { padding:12px 14px } .contact-item .icon { width:32px; height:32px; min-width:32px } .contact-item .icon svg { width:16px; height:16px } .contact-item h4 { font-size:.75rem } .contact-item span,.contact-item a { font-size:.75rem }
             .floating-call { right:60px; font-size:.7rem; padding:4px 12px } .floating-whatsapp { right:12px; width:44px; height:44px }
             .chat-toggle { bottom:70px; right:12px; width:44px; height:44px; font-size:1.1rem }
             .chat-window { bottom:116px; right:8px; max-width:calc(100vw - 16px); max-height:55vh; border-radius:12px }
             .chat-messages { min-height:140px; max-height:30vh; padding:8px 10px } .msg { font-size:.7rem; padding:6px 10px; max-width:96% }
             .quick-reply-btn { font-size:.6rem; padding:3px 10px } .chat-input-area { padding:6px 10px 10px; gap:6px } .chat-input-area input { font-size:.75rem; padding:6px 10px; min-height:36px } .chat-send-btn { width:36px; height:36px; min-width:36px; font-size:.8rem }
-            .workshop-info .badges span { font-size:.65rem; padding:4px 12px }
-            .hero-badge { font-size:.65rem; padding:4px 14px; flex-wrap:wrap }
-            .accent-line .line1 { width:40px }
-            .accent-line .line2 { width:16px }
-            .container { padding:0 12px }
-            .hero-section .subtitle { font-size:.9rem }
-            .hero-section .tagline { font-size:.9rem }
-            .section-subtitle { font-size:.9rem }
-            .workshop-info .name { font-size:1.2rem }
-            .footer-grid { grid-template-columns:1fr }
         }
-
-        /* ===== CONTENT-VISIBILITY ===== */
-        .about-section,
-        #services,
-        .why-section,
-        #portfolio,
-        #ongoing,
-        #clients,
-        #testimonials,
-        #lead-form,
-        #contact,
-        .workshop-img,
-        .workshop-info,
-        .footer {
-            content-visibility: auto;
-            contain-intrinsic-size: 600px;
-        }
-        .about-section { contain-intrinsic-size: 700px; }
-        #services { contain-intrinsic-size: 800px; }
-        #portfolio { contain-intrinsic-size: 900px; }
-        #ongoing { contain-intrinsic-size: 800px; }
-        #testimonials { contain-intrinsic-size: 700px; }
-        #lead-form { contain-intrinsic-size: 800px; }
-        .footer { contain-intrinsic-size: 400px; }
     </style>
 </head>
 <body>
@@ -519,7 +501,7 @@
         </div>
     </nav>
 
-    <!-- HERO -->
+    <!-- HERO (with video) -->
     <section class="hero-section" id="home">
         <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="https://i.ibb.co/R4jLXFVX/Chat-GPT-Image-Aug-9-2026-11-07-42-PM.png">
             <source src="assets/videos/sccw-mumbai.mp4" type="video/mp4">
@@ -548,7 +530,7 @@
         </div>
     </section>
 
-    <!-- ABOUT -->
+    <!-- About -->
     <section class="about-section section" id="about">
         <div class="container">
             <div class="about-grid">
@@ -563,11 +545,11 @@
                         <div class="stat-box"><div class="num" data-target="200">0</div><div class="label">Workers</div></div>
                     </div>
                 </div>
-                <div class="about-text">
+                <div>
                     <span style="color:#c9a96e;font-weight:600;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:6px;">About SCCW</span>
                     <h2 class="section-title">Mumbai, Navi Mumbai, Thane &amp; Panvel Ka <span class="gold">Trusted Construction</span> Partner</h2>
-                    <p><strong>Sahani Civil Construction Works (SCCW)</strong> is a premier civil engineering and contracting firm proudly serving Mumbai, Navi Mumbai, Thane, Panvel &amp; Pune. With experienced engineers and a highly skilled workforce, we deliver premium finishing and modern construction methods to every project.</p>
-                    <p>Our local expertise across these regions means we understand the soil, municipal norms, and design preferences perfectly — ensuring smooth approvals and flawless execution for residential, commercial, and industrial projects.</p>
+                    <p style="color:#b0b0b0;font-size:.95rem;line-height:1.6;"><strong>Sahani Civil Construction Works (SCCW)</strong> is a premier civil engineering and contracting firm proudly serving Mumbai, Navi Mumbai, Thane, Panvel &amp; Pune. With experienced engineers and a highly skilled workforce, we deliver premium finishing and modern construction methods to every project.</p>
+                    <p style="color:#b0b0b0;margin-top:12px;line-height:1.6;">Our local expertise across these regions means we understand the soil, municipal norms, and design preferences perfectly — ensuring smooth approvals and flawless execution for residential, commercial, and industrial projects.</p>
                     <div class="highlight-box">"From foundation to finishing, SCCW provides complete execution under one roof – across Mumbai, Navi Mumbai, Thane &amp; Panvel."</div>
                     <a href="#lead-form" class="btn btn-gold" style="margin-top:6px;">Book Free Consultation <i class="fas fa-calendar-check"></i></a>
                 </div>
@@ -575,25 +557,25 @@
         </div>
     </section>
 
-    <!-- SERVICES -->
+    <!-- Services -->
     <section class="section" id="services">
         <div class="container">
             <div class="text-center">
                 <span style="color:#c9a96e;font-weight:600;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;">Our Services</span>
                 <h2 class="section-title">Complete <span class="gold">Construction Solutions</span> Under One Roof</h2>
-                <p class="section-subtitle">From Mumbai to Panvel, we deliver premium RCC, interiors, waterproofing &amp; turnkey projects.</p>
+                <p class="section-subtitle mx-auto">From Mumbai to Panvel, we deliver premium RCC, interiors, waterproofing &amp; turnkey projects.</p>
             </div>
             <div class="services-grid" id="servicesGrid"></div>
         </div>
     </section>
 
-    <!-- WHY SCCW -->
+    <!-- Why SCCW -->
     <section class="section why-section" style="background:rgba(13,10,8,0.4);">
         <div class="container">
             <div class="text-center">
                 <span style="color:#c9a96e;font-weight:600;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;">Why SCCW</span>
                 <h2 class="section-title">Why <span class="gold">Mumbai, Navi Mumbai, Thane &amp; Panvel</span> Choose SCCW</h2>
-                <p class="section-subtitle">Quality, transparency, and on-time delivery — trusted across all our service locations.</p>
+                <p class="section-subtitle mx-auto">Quality, transparency, and on-time delivery — trusted across all our service locations.</p>
             </div>
             <div class="why-grid" id="whyGrid"></div>
             <div class="counters-row">
@@ -605,13 +587,13 @@
         </div>
     </section>
 
-    <!-- PORTFOLIO -->
+    <!-- Portfolio -->
     <section class="section" id="portfolio">
         <div class="container">
             <div class="text-center">
                 <span style="color:#c9a96e;font-weight:600;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;">Our Work</span>
                 <h2 class="section-title">Premium <span class="gold">Project Showcase</span> Across Mumbai &amp; Navi Mumbai</h2>
-                <p class="section-subtitle">Explore our finest work — from Andheri to Panvel, we deliver luxury finish everywhere.</p>
+                <p class="section-subtitle mx-auto">Explore our finest work — from Andheri to Panvel, we deliver luxury finish everywhere.</p>
             </div>
             <div class="filter-tabs">
                 <button class="filter-tab active" data-filter="all">All</button>
@@ -628,29 +610,29 @@
         </div>
     </section>
 
-    <!-- ONGOING -->
+    <!-- Ongoing -->
     <section class="section ongoing-section" id="ongoing">
         <div class="container">
             <div class="text-center">
                 <span style="color:#c9a96e;font-weight:600;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;">Live Construction</span>
                 <h2 class="section-title"><span class="gold">Ongoing</span> Projects in Navi Mumbai</h2>
-                <p class="section-subtitle">Real-time updates from our active construction sites — quality in progress.</p>
+                <p class="section-subtitle mx-auto">Real-time updates from our active construction sites — quality in progress.</p>
             </div>
             <div class="ongoing-grid" id="ongoingGrid"></div>
         </div>
     </section>
 
-    <!-- CLIENTS -->
+    <!-- Clients -->
     <section class="section" style="background:rgba(13,10,8,0.4);" id="clients">
         <div class="container text-center">
             <span style="color:#c9a96e;font-weight:600;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;">Our Prestigious Clients</span>
             <h2 class="section-title">Trusted by <span class="gold">Industry Leaders</span></h2>
-            <p class="section-subtitle" style="margin-bottom:16px;">From global corporations to local enterprises, we've built lasting relationships.</p>
+            <p class="section-subtitle mx-auto" style="margin-bottom:16px;">From global corporations to local enterprises, we've built lasting relationships.</p>
             <div class="client-grid" id="clientGrid"></div>
         </div>
     </section>
 
-    <!-- TESTIMONIALS -->
+    <!-- Testimonials -->
     <section class="section" id="testimonials">
         <div class="container">
             <div class="text-center">
@@ -661,14 +643,14 @@
         </div>
     </section>
 
-    <!-- LEAD FORM -->
+    <!-- Lead Form -->
     <section class="section" style="background:rgba(13,10,8,0.4);" id="lead-form">
         <div class="container">
             <div class="lead-grid">
                 <div>
                     <span style="color:#c9a96e;font-weight:600;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;">Get Started</span>
-                    <h3 style="font-family:Georgia,serif;font-size:1.8rem;color:#fff;word-wrap:break-word;">Ready to Build Your <span class="gold">Dream Project?</span></h3>
-                    <p style="color:#b0b0b0;margin-bottom:16px;word-wrap:break-word;">Fill the form &amp; our expert team will contact you within 10 minutes. Mumbai, Navi Mumbai, Thane, Panvel, Pune — we cover it all.</p>
+                    <h3 style="font-family:Georgia,serif;font-size:1.8rem;color:#fff;">Ready to Build Your <span class="gold">Dream Project?</span></h3>
+                    <p style="color:#b0b0b0;margin-bottom:16px;">Fill the form &amp; our expert team will contact you within 10 minutes. Mumbai, Navi Mumbai, Thane, Panvel, Pune — we cover it all.</p>
                     <div class="contact-list">
                         <div class="contact-item"><div class="icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div><div><h4>Call Us</h4><a href="tel:+918169990522">+91-8169990522</a></div></div>
                         <div class="contact-item"><div class="icon"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div><div><h4>WhatsApp</h4><a href="https://wa.me/918169990522">+91-8169990522</a></div></div>
@@ -676,7 +658,7 @@
                     </div>
                 </div>
                 <div class="lead-form-wrapper">
-                    <h4 style="font-family:Georgia,serif;color:#fff;text-align:center;font-size:1.2rem;margin-bottom:16px;word-wrap:break-word;">Book <span class="gold">Free Consultation</span></h4>
+                    <h4 style="font-family:Georgia,serif;color:#fff;text-align:center;font-size:1.2rem;margin-bottom:16px;">Book <span class="gold">Free Consultation</span></h4>
                     <form id="leadForm" action="https://formsubmit.co/mail@sccw.in" method="POST" onsubmit="handleFormSubmit(event)">
                         <input type="hidden" name="_captcha" value="false" />
                         <input type="hidden" name="_template" value="table" />
@@ -688,14 +670,14 @@
                         <div class="form-group"><label>Location *</label><select name="Location" required><option value="">Select</option><option>Mumbai</option><option>Navi Mumbai</option><option>Thane</option><option>Panvel</option><option>Pune</option><option>Other</option></select></div>
                         <div class="form-group"><label>Budget Range</label><select name="Budget"><option value="">Select</option><option>Under ₹5L</option><option>₹5-15L</option><option>₹15-50L</option><option>₹50L-1Cr</option><option>₹1Cr+</option></select></div>
                         <div class="form-group"><label>Message</label><textarea name="Message" rows="3" placeholder="Describe your project..."></textarea></div>
-                        <button type="submit" class="form-submit-btn" id="formSubmitBtn">Book Free Consultation <i class="fas fa-arrow-right"></i></button>
+                        <button type="submit" class="form-submit-btn" id="formSubmitBtn" style="width:100%;padding:14px;background:linear-gradient(135deg,#c9a96e,#d4af37);color:#000;border:none;border-radius:50px;font-weight:700;font-size:.95rem;cursor:pointer;transition:.15s;min-height:48px;">Book Free Consultation <i class="fas fa-arrow-right"></i></button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- Contact -->
     <section class="section" id="contact">
         <div class="container">
             <div class="text-center">
@@ -710,14 +692,14 @@
         </div>
     </section>
 
-    <!-- WORKSHOP -->
+    <!-- Workshop -->
     <div class="workshop-img"><img src="https://i.ibb.co/kVvCmwNY/Chat-GPT-Image-May-14-2026-07-19-26-PM.png" alt="SCCW Workshop" loading="lazy" width="1200" height="400" decoding="async" referrerpolicy="no-referrer" /></div>
     <div class="workshop-info">
         <div class="name">Sahani Civil Construction Works</div>
         <div class="badges"><span><i class="fas fa-check-circle"></i> MSME Registered</span><span><i class="fas fa-hard-hat"></i> PWD Licensed</span><span><i class="fas fa-building"></i> BMC &amp; NMMC Approved</span></div>
     </div>
 
-    <!-- FOOTER -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -726,7 +708,7 @@
                         <img src="https://i.ibb.co/9kNbLWsr/logo-26-png.png" alt="SCCW Logo" style="height:45px;width:auto;" loading="lazy" width="45" height="45" decoding="async" referrerpolicy="no-referrer" />
                         <span style="font-family:Georgia,serif;font-weight:700;font-size:1rem;color:#fff;">SCCW</span>
                     </div>
-                    <p style="color:#888;font-size:.8rem;line-height:1.5;word-wrap:break-word;">Sahani Civil Construction Works — trusted across Mumbai, Navi Mumbai, Thane &amp; Panvel for premium construction, interiors &amp; turnkey solutions.</p>
+                    <p style="color:#888;font-size:.8rem;line-height:1.5;">Sahani Civil Construction Works — trusted across Mumbai, Navi Mumbai, Thane &amp; Panvel for premium construction, interiors &amp; turnkey solutions.</p>
                     <p style="font-family:Georgia,serif;font-weight:600;color:#c9a96e;font-size:.85rem;margin-top:6px;">"Building Trust Through Quality Construction."</p>
                 </div>
                 <div><h4>Quick Links</h4><a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#portfolio">Projects</a><a href="#ongoing">Ongoing</a><a href="#clients">Clients</a><a href="#contact">Contact</a></div>
@@ -806,8 +788,11 @@
         </div>
     </div>
 
+    <!-- ===== DEFERRED SCRIPTS (execute after paint) ===== -->
     <script>
+        // Use requestIdleCallback or load event to defer heavy initialization
         function initApp() {
+            // ---- DATA ----
             const servicesData = [
                 { icon: "fa-hard-hat", title: "RCC Construction", desc: "Reinforced cement concrete work." },
                 { icon: "fa-home", title: "Load Bearing", desc: "Traditional & modern load bearing structures." },
@@ -905,37 +890,32 @@
                 "Scantech Pvt Ltd", "Repsindia", "Woodpecker", "Fattiger", "Many More"
             ];
 
-            // Render Services
+            // ---- RENDER ----
             document.getElementById('servicesGrid').innerHTML = servicesData.map(s =>
                 `<div class="service-card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2V9h3V7h2c.55 0 1-.45 1-1V5.07c2.83 1.02 4.93 3.58 4.93 6.93 0 2.27-.92 4.33-2.42 5.8z"/></svg></div><h4>${s.title}</h4><p>${s.desc}</p></div>`
             ).join('');
 
-            // Render Why
             document.getElementById('whyGrid').innerHTML = whyData.map(i =>
                 `<div class="why-card"><div class="check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></div><div><h4>${i}</h4><p>Delivering excellence.</p></div></div>`
             ).join('');
 
-            // Render Portfolio
             document.getElementById('portfolioGrid').innerHTML = portfolioData.map(p =>
                 `<div class="portfolio-card" data-category="${p.cat}"><div class="img"><img src="${p.img}" alt="${p.title}" loading="lazy" width="400" height="250" decoding="async" referrerpolicy="no-referrer"><div class="overlay"><span>View</span></div></div><div class="info"><h4>${p.title}</h4><span>${p.type}</span></div></div>`
             ).join('');
 
-            // Render Ongoing
             document.getElementById('ongoingGrid').innerHTML = ongoingData.map(p =>
                 `<div class="ongoing-card"><div class="img"><img src="${p.img}" alt="${p.title}" loading="lazy" width="400" height="250" decoding="async" referrerpolicy="no-referrer"><div class="live-badge"><span class="dot-live"></span> LIVE</div></div><div class="info"><h4>${p.title}</h4><span>${p.type}</span></div></div>`
             ).join('');
 
-            // Render Testimonials
             document.getElementById('testimonialsGrid').innerHTML = testimonialsData.map(t =>
                 `<div class="testimonial-card"><div class="stars">${'★'.repeat(t.stars)}</div><p>"${t.text}"</p><div class="author"><div class="avatar">${t.author.charAt(0)}</div><div><h5>${t.author}</h5><span>${t.role}</span></div></div></div>`
             ).join('');
 
-            // Render Clients
             document.getElementById('clientGrid').innerHTML = clientsData.map(c =>
                 `<div class="client-item">${c}</div>`
             ).join('');
 
-            // FILTERS
+            // ---- FILTER TABS ----
             document.querySelectorAll('.filter-tab').forEach(tab => {
                 tab.addEventListener('click', function() {
                     document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
@@ -948,7 +928,7 @@
                 });
             });
 
-            // COUNTERS
+            // ---- COUNTERS ----
             function animateCounter(el, target) {
                 let current = 0;
                 const step = Math.ceil(target / 40);
@@ -975,7 +955,7 @@
                     counterObserver.observe(el); }
             });
 
-            // SMOOTH SCROLL
+            // ---- SMOOTH SCROLL ----
             document.querySelectorAll('a[href^="#"]').forEach(a => {
                 a.addEventListener('click', function(e) {
                     const href = this.getAttribute('href');
@@ -990,7 +970,7 @@
                 });
             });
 
-            // FORM
+            // ---- FORM ----
             window.handleFormSubmit = function(e) {
                 e.preventDefault();
                 const btn = document.getElementById('formSubmitBtn');
@@ -999,7 +979,7 @@
                 setTimeout(() => { e.target.submit(); }, 600);
             };
 
-            // POPUP
+            // ---- POPUP ----
             const inquiryPopup = document.getElementById('popupOverlay');
             const thankyou = document.getElementById('thankyouOverlay');
 
@@ -1052,9 +1032,10 @@
                     }, 1500);
                 }, 1200);
             };
+            // Show popup after 2.5s
             setTimeout(openInquiryPopup, 2500);
 
-            // CHATBOT
+            // ---- CHATBOT ----
             const chatToggle = document.getElementById('chatToggle');
             const chatWindow = document.getElementById('chatWindow');
             const chatClose = document.getElementById('chatClose');
@@ -1064,6 +1045,7 @@
             const typingIndicator = document.getElementById('typingIndicator');
             const quickReplies = document.getElementById('quickReplies');
             let isChatOpen = false;
+
             const botResponses = [
                 { keywords: ['hello', 'hi', 'hey', 'namaste'],
                     response: "Hello there! 👋 Welcome to SCCW — Mumbai's trusted civil construction & interior design partner. How can I assist you today?" },
@@ -1137,9 +1119,7 @@
                 chatWindow.classList.add('open');
                 chatToggle.style.display = 'none';
                 if (chatMessages.children.length === 0) {
-                    setTimeout(() => addMessage(
-                        "👋 Welcome to SCCW! I'm your virtual assistant. Ask me anything about our construction & interior services. Or use the quick buttons below.",
-                        'bot'), 300);
+                    setTimeout(() => addMessage("👋 Welcome to SCCW! I'm your virtual assistant. Ask me anything about our construction & interior services. Or use the quick buttons below.", 'bot'), 300);
                 }
             }
 
@@ -1160,13 +1140,13 @@
                 }
             });
 
-            // NAVBAR SCROLL
+            // ---- NAVBAR SCROLL ----
             const navbar = document.getElementById('navbar');
             window.addEventListener('scroll', function() {
                 navbar.classList.toggle('scrolled', window.scrollY > 40);
             });
 
-            // MOBILE MENU
+            // ---- MOBILE MENU ----
             window.toggleMenu = function() {
                 document.getElementById('hamburger').classList.toggle('active');
                 document.getElementById('mobileMenu').classList.toggle('active');
@@ -1182,12 +1162,16 @@
             };
             document.getElementById('mobileOverlay').addEventListener('click', closeMenu);
 
+            // ---- YEAR ----
             document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+            // ---- URL CLEANUP ----
             if (window.location.search.includes('submitted=true')) {
                 history.replaceState(null, '', window.location.pathname);
             }
         }
 
+        // Defer initialization
         if (window.requestIdleCallback) {
             requestIdleCallback(initApp, { timeout: 2000 });
         } else {
@@ -1196,11 +1180,12 @@
             });
         }
 
+        // Video autoplay helper
         window.addEventListener("load", function() {
             const video = document.querySelector(".hero-video");
             if (video) {
                 video.muted = true;
-                video.play().catch(err => {});
+                video.play().catch(err => { console.log("Autoplay failed:", err); });
             }
         });
     </script>
