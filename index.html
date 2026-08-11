@@ -171,7 +171,6 @@
             margin-inline: auto;
             position: relative;
             z-index: 3;
-            /* Above the fixed background */;
         }
         .gold {
             color: var(--color-gold);
@@ -2028,133 +2027,518 @@
             }
         }
 
-        /* Mobile Phones */
-        @media (max-width: 480px) {
-            .hero-section h1 {
-                font-size: 1.8rem;
-            }
-            .section-title {
-                font-size: 1.5rem;
-            }
-            .hero-buttons .btn {
-                width: 100%;
-                justify-content: center;
-            }
-            .accent-line .line1 {
-                width: 40px;
-            }
-            .accent-line .line2 {
-                width: 16px;
+        /* =========================================================
+           SCCW — MOBILE-FIRST HOMEPAGE
+           320px → 600px
+           ========================================================= */
+
+        @media (max-width: 600px) {
+
+            /* ---------- PAGE ---------- */
+
+            body {
+                padding-bottom: 76px;
+                overflow-x: hidden;
             }
 
-            /* Grids to single column on mobile */
-            .services-grid {
+            .container {
+                width: calc(100% - 32px);
+                max-width: 100%;
+            }
+
+            .section {
+                padding: 54px 0;
+            }
+
+            /* ---------- HEADER ---------- */
+
+            .navbar {
+                padding: 8px 0;
+            }
+
+            .navbar.scrolled {
+                padding: 6px 0;
+            }
+
+            .nav-logo img {
+                height: 42px;
+            }
+
+            .nav-logo span {
+                font-size: .95rem;
+            }
+
+            .nav-logo span small {
+                font-size: .48rem;
+            }
+
+            .hamburger {
+                width: 44px;
+                height: 44px;
+                justify-content: center;
+            }
+
+
+            /* ---------- HERO ---------- */
+
+            .hero-section {
+                min-height: 100svh;
+                padding: 88px 0 50px;
+            }
+
+            .hero-content {
+                padding: 0;
+            }
+
+            .hero-badge {
+                margin-bottom: 18px;
+                font-size: .62rem;
+                padding: 7px 12px;
+            }
+
+            .hero-section h1 {
+                font-size: clamp(2.05rem, 9.5vw, 2.7rem);
+                line-height: 1.04;
+            }
+
+            .hero-section .subtitle {
+                max-width: 340px;
+                margin: 18px auto 0;
+                font-size: .82rem;
+                line-height: 1.55;
+            }
+
+            .hero-section .tagline {
+                max-width: 320px;
+                margin: 12px auto 20px;
+                font-size: .68rem;
+                line-height: 1.5;
+            }
+
+            .hero-buttons {
+                display: grid;
                 grid-template-columns: 1fr;
+                gap: 10px;
+                width: 100%;
+                max-width: 350px;
+                margin: auto;
             }
-            .portfolio-grid {
-                grid-template-columns: 1fr;
+
+            .hero-buttons .btn {
+                width: 100%;
+                min-height: 50px;
+                border-radius: 12px;
             }
-            .ongoing-grid {
-                grid-template-columns: 1fr;
+
+            /* Hide secondary hero buttons */
+            .hero-buttons .btn:nth-child(3),
+            .hero-buttons .btn:nth-child(4),
+            .hero-buttons .btn:nth-child(5) {
+                display: none;
             }
-            .testimonials-grid {
-                grid-template-columns: 1fr;
+
+
+            /* ---------- SECTION HEADINGS ---------- */
+
+            .section-title {
+                font-size: clamp(1.65rem, 7.5vw, 2.15rem);
+                line-height: 1.12;
             }
-            .client-grid {
-                grid-template-columns: repeat(2, 1fr);
+
+            .section-subtitle {
+                font-size: .82rem;
+                line-height: 1.5;
             }
+
+
+            /* ---------- ABOUT ---------- */
+
+            .about-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 22px;
+            }
+
+            .about-image {
+                order: 1;
+                aspect-ratio: 16 / 10;
+                border-radius: 14px;
+            }
+
+            .about-text {
+                order: 2;
+            }
+
+            .about-text .section-title {
+                margin-bottom: 14px;
+            }
+
+            .about-text p {
+                font-size: .82rem;
+                line-height: 1.6;
+            }
+
             .about-stats {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 9px;
+                margin-top: 16px;
             }
-            .counters-row {
-                grid-template-columns: 1fr 1fr;
+
+            .stat-box {
+                min-height: 76px;
+                padding: 12px 6px;
             }
+
             .stat-box .num {
                 font-size: 1.4rem;
             }
+
+            .stat-box .label {
+                font-size: .57rem;
+            }
+
+
+            /* ---------- SERVICES ---------- */
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .service-card {
+                display: grid;
+                grid-template-columns: 46px 1fr;
+                text-align: left;
+                align-items: center;
+                gap: 12px;
+                padding: 14px;
+                border-radius: 13px;
+            }
+
+            .service-card .icon {
+                width: 44px;
+                height: 44px;
+                margin: 0;
+                grid-row: span 2;
+            }
+
+            .service-card h4 {
+                font-size: .88rem;
+                margin: 0;
+            }
+
+            .service-card p {
+                font-size: .69rem;
+                line-height: 1.35;
+            }
+
+
+            /* ---------- WHY SCCW ---------- */
+
+            .why-grid {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+
+            .why-card {
+                padding: 12px;
+                min-height: 58px;
+            }
+
+            .why-card h4 {
+                font-size: .78rem;
+            }
+
+            .why-card p {
+                display: none;
+            }
+
+            .why-card .check {
+                width: 30px;
+                min-width: 30px;
+                height: 30px;
+            }
+
+
+            /* ---------- COUNTERS ---------- */
+
+            .counters-row {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 9px;
+                margin-top: 20px;
+            }
+
+            .counter-box {
+                padding: 14px 6px;
+                min-height: 78px;
+            }
+
             .counter-box .num {
-                font-size: 1.6rem;
+                font-size: 1.45rem;
             }
+
+            .counter-box .label {
+                font-size: .55rem;
+            }
+
+
+            /* ---------- PROJECT FILTERS ---------- */
+
+            .filter-tabs {
+                justify-content: flex-start;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                scrollbar-width: none;
+                padding: 4px 0 8px;
+                gap: 7px;
+            }
+
+            .filter-tabs::-webkit-scrollbar {
+                display: none;
+            }
+
+            .filter-tab {
+                flex: 0 0 auto;
+                padding: 8px 14px;
+                font-size: .65rem;
+            }
+
+
+            /* ---------- PROJECTS ---------- */
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .portfolio-card {
+                border-radius: 14px;
+            }
+
+            .portfolio-card .img {
+                aspect-ratio: 16 / 10;
+            }
+
+            .portfolio-card .info {
+                padding: 12px 14px;
+            }
+
+            .portfolio-card .info h4 {
+                font-size: .88rem;
+            }
+
+
+            /* ---------- ONGOING ---------- */
+
+            .ongoing-grid {
+                display: flex;
+                overflow-x: auto;
+                gap: 12px;
+                scroll-snap-type: x mandatory;
+                scrollbar-width: none;
+                padding-bottom: 8px;
+            }
+
+            .ongoing-grid::-webkit-scrollbar {
+                display: none;
+            }
+
+            .ongoing-card {
+                flex: 0 0 86%;
+                scroll-snap-align: start;
+                border-radius: 14px;
+            }
+
+            .ongoing-card .img {
+                aspect-ratio: 16 / 10;
+            }
+
+
+            /* ---------- CLIENTS ---------- */
+
+            .client-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+
+            .client-item {
+                min-height: 58px;
+                padding: 9px 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: .67rem;
+            }
+
+
+            /* ---------- TESTIMONIALS ---------- */
+
+            .testimonials-grid {
+                display: flex;
+                overflow-x: auto;
+                gap: 12px;
+                scroll-snap-type: x mandatory;
+                scrollbar-width: none;
+                padding-bottom: 8px;
+            }
+
+            .testimonials-grid::-webkit-scrollbar {
+                display: none;
+            }
+
+            .testimonial-card {
+                flex: 0 0 88%;
+                scroll-snap-align: start;
+                padding: 17px;
+            }
+
+            .testimonial-card p {
+                font-size: .82rem;
+                line-height: 1.55;
+            }
+
+
+            /* ---------- LEAD FORM ---------- */
+
+            .lead-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
             .lead-form-wrapper {
-                padding: 1rem;
+                padding: 18px 14px;
+                border-radius: 18px;
             }
-            .popup-box {
-                padding: 1.5rem 1rem;
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                min-height: 46px;
+                font-size: .84rem;
             }
-            .floating-call {
-                right: 60px;
-                width: 44px;
-                height: 44px;
+
+
+            /* ---------- CONTACT ---------- */
+
+            .contact-list {
+                gap: 9px;
             }
-            .floating-whatsapp {
-                right: 12px;
-                width: 44px;
-                height: 44px;
+
+            .contact-item {
+                padding: 11px 12px;
+                border-radius: 13px;
             }
-            .chat-toggle {
-                bottom: 70px;
-                right: 12px;
-                width: 44px;
-                height: 44px;
+
+            .contact-item .icon {
+                width: 36px;
+                min-width: 36px;
+                height: 36px;
+            }
+
+
+            /* ---------- WORKSHOP ---------- */
+
+            .workshop-img img {
+                height: 180px;
+                object-fit: cover;
+            }
+
+            .workshop-info {
+                padding: 24px 15px;
+            }
+
+            .workshop-info .name {
                 font-size: 1.1rem;
             }
-            .chat-window {
-                bottom: 116px;
-                right: 8px;
-                max-width: calc(100vw - 16px);
-                max-height: 55vh;
-                border-radius: 12px;
-            }
-            .chat-messages {
-                min-height: 140px;
-                max-height: 30vh;
-                padding: 8px 10px;
-            }
-            .msg {
-                font-size: 0.7rem;
-                padding: 6px 10px;
-                max-width: 96%;
-            }
-            .quick-reply-btn {
-                font-size: 0.6rem;
-                padding: 3px 10px;
-            }
-            .chat-input-area {
-                padding: 6px 10px 10px;
+
+            .workshop-info .badges {
                 gap: 6px;
             }
-            .chat-input-area input {
-                font-size: 0.75rem;
-                padding: 6px 10px;
-                min-height: 36px;
-            }
-            .chat-send-btn {
-                width: 36px;
-                height: 36px;
-                min-width: 36px;
-                font-size: 0.8rem;
-            }
-            .workshop-info .badges span {
-                font-size: 0.65rem;
-                padding: 4px 12px;
-            }
-            .hero-badge {
-                font-size: 0.65rem;
-                padding: 4px 14px;
-                flex-wrap: wrap;
-            }
-        }
 
-        /* Very Small Mobile (<= 360px) */
-        @media (max-width: 360px) {
-            .hero-section h1 {
-                font-size: 1.5rem;
+            .workshop-info .badges span {
+                font-size: .58rem;
+                padding: 6px 9px;
             }
-            .section-title {
-                font-size: 1.2rem;
+
+
+            /* ---------- FOOTER ---------- */
+
+            .footer {
+                padding: 34px 0 22px;
             }
-            .container {
-                width: min(100% - 1rem, 1280px);
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 22px;
+            }
+
+
+            /* ---------- REMOVE MOBILE CLUTTER ---------- */
+
+            .floating-call,
+            .floating-whatsapp {
+                display: none;
+            }
+
+            .chat-toggle {
+                width: 46px;
+                height: 46px;
+                right: 14px;
+                bottom: 76px;
+            }
+
+
+            /* ---------- FIXED MOBILE ACTION BAR ---------- */
+
+            body::after {
+                content: "";
+                position: fixed;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 64px;
+                background: rgba(8,6,5,.97);
+                border-top: 1px solid rgba(201,169,110,.2);
+                z-index: 9980;
+            }
+
+            .mobile-action-bar {
+                position: fixed;
+                left: 10px;
+                right: 10px;
+                bottom: 8px;
+                height: 48px;
+                z-index: 9990;
+                display: grid;
+                grid-template-columns: 1fr 1.2fr 1fr;
+                gap: 6px;
+            }
+
+            .mobile-action-bar a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 5px;
+                border-radius: 9px;
+                font-size: .67rem;
+                font-weight: 700;
+                text-decoration: none;
+            }
+
+            .mobile-call {
+                background: #c9a96e;
+                color: #000;
+            }
+
+            .mobile-whatsapp {
+                background: #25D366;
+                color: #fff;
+            }
+
+            .mobile-quote {
+                background: #fff;
+                color: #000;
             }
         }
     </style>
@@ -2456,6 +2840,22 @@
             <div class="footer-bottom">&copy; <span id="currentYear"></span> Sahani Civil Construction Works (SCCW). All Rights Reserved. | <a href="https://www.sccw.in">www.sccw.in</a></div>
         </div>
     </footer>
+
+    <!-- MOBILE BOTTOM ACTION BAR -->
+    <div class="mobile-action-bar">
+        <a href="tel:+918169990522" class="mobile-call">
+            <i class="fas fa-phone"></i>
+            CALL
+        </a>
+        <a href="https://wa.me/918169990522?text=Hello%20SCCW" target="_blank" class="mobile-whatsapp">
+            <i class="fab fa-whatsapp"></i>
+            WHATSAPP
+        </a>
+        <a href="#lead-form" class="mobile-quote">
+            <i class="fas fa-file-invoice"></i>
+            GET QUOTE
+        </a>
+    </div>
 
     <!-- FLOATING BUTTONS -->
     <a href="https://wa.me/918169990522?text=Hello%20SCCW" target="_blank" class="floating-whatsapp" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
