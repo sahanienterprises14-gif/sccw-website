@@ -11,11 +11,10 @@
     <meta property="og:image" content="https://i.ibb.co/9kNbLWsr/logo-26-png.png" />
     <meta name="theme-color" content="#080605" />
 
-    <!-- ===== OPTIMIZED PRELOADS & PRECONNECTS ===== -->
+    <!-- ===== OPTIMIZED PRELOADS ===== -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
     <link rel="preconnect" href="https://i.ibb.co" />
     <link rel="preload" as="image" href="https://i.ibb.co/9kNbLWsr/logo-26-png.png" fetchpriority="high" />
-    <!-- Preload video poster or a placeholder image for hero -->
     <link rel="preload" as="image" href="https://i.ibb.co/R4jLXFVX/Chat-GPT-Image-Aug-9-2026-11-07-42-PM.png" fetchpriority="high" />
 
     <!-- Font Awesome (async) -->
@@ -34,7 +33,7 @@
 
     <link rel="icon" type="image/png" href="https://i.ibb.co/MbwpZmg/android-chrome-192x192.png" />
 
-    <!-- ===== CRITICAL CSS (Inlined) ===== -->
+    <!-- ===== CRITICAL CSS (includes mobile responsive rules) ===== -->
     <style>
         * { margin:0; padding:0; box-sizing:border-box }
         body {
@@ -169,7 +168,7 @@
         .hero-section .tagline .check { display:inline-block; margin-right:4px }
         .hero-buttons { display:flex; flex-wrap:wrap; gap:12px }
 
-        /* responsive */
+        /* ===== RESPONSIVE RULES (CRITICAL PATH) ===== */
         @media(max-width:768px) {
             .nav-links { display:none } .hamburger { display:flex }
             .hero-section { min-height:auto; padding:100px 0 50px }
@@ -179,11 +178,48 @@
             .hero-buttons { gap:8px }
             .section { padding:40px 0 }
             .section-title { font-size:1.6rem }
+            .counters-row { grid-template-columns:repeat(2,1fr) }
+            .services-grid,.why-grid,.portfolio-grid,.ongoing-grid { grid-template-columns:1fr 1fr; gap:10px }
+            .service-card { padding:16px 12px } .service-card h4 { font-size:.8rem }
+            .testimonials-grid { grid-template-columns:1fr }
+            .client-grid { grid-template-columns:repeat(3,1fr) }
+            .footer-grid { grid-template-columns:1fr }
+            .nav-logo img { height:45px } .nav-logo span { font-size:1rem }
+            .floating-call { right:74px; font-size:.8rem; padding:6px 14px }
+            .floating-whatsapp { right:16px; width:50px; height:50px }
+            .chat-toggle { bottom:80px; right:16px; width:50px; height:50px; font-size:1.3rem }
+            .chat-window { bottom:136px; right:12px; max-width:calc(100vw - 24px); max-height:60vh; border-radius:16px }
+            .chat-messages { min-height:180px; max-height:35vh; padding:10px 12px }
+            .msg { font-size:.78rem; padding:8px 12px; max-width:94% }
+            .about-grid,.lead-grid { grid-template-columns:1fr }
+            .footer-grid { grid-template-columns:1fr 1fr }
         }
         @media(max-width:480px) {
             .hero-section h1 { font-size:1.6rem }
             .btn { font-size:.8rem; padding:10px 16px; min-height:40px }
             .section-title { font-size:1.3rem }
+            .services-grid,.why-grid,.portfolio-grid,.ongoing-grid { grid-template-columns:1fr 1fr; gap:8px }
+            .counters-row { grid-template-columns:1fr 1fr }
+            .client-grid { grid-template-columns:repeat(2,1fr) }
+            .about-stats { grid-template-columns:repeat(3,1fr); gap:6px }
+            .stat-box { padding:10px 4px } .stat-box .num { font-size:1.2rem } .stat-box .label { font-size:.55rem }
+            .service-card { padding:12px 10px } .service-card h4 { font-size:.7rem } .service-card p { font-size:.6rem } .service-card .icon { width:32px; height:32px } .service-card .icon svg { width:18px; height:18px }
+            .why-card { padding:10px 8px } .why-card h4 { font-size:.75rem } .why-card p { font-size:.6rem } .why-card .check { width:24px; height:24px; min-width:24px }
+            .portfolio-card .info,.ongoing-card .info { padding:10px 12px } .portfolio-card .info h4,.ongoing-card .info h4 { font-size:.75rem } .portfolio-card .info span,.ongoing-card .info span { font-size:.6rem }
+            .ongoing-card .img .live-badge { font-size:.5rem; padding:3px 10px; top:8px; left:8px }
+            .filter-tab { font-size:.6rem; padding:4px 12px; min-height:30px }
+            .counter-box .num { font-size:1.4rem } .counter-box .label { font-size:.6rem }
+            .lead-form-wrapper { padding:16px 12px } .form-group input,.form-group select,.form-group textarea { font-size:.8rem; padding:8px 10px; min-height:38px } .form-submit-btn { font-size:.8rem; min-height:42px; padding:10px }
+            .contact-item { padding:12px 14px } .contact-item .icon { width:32px; height:32px; min-width:32px } .contact-item .icon svg { width:16px; height:16px } .contact-item h4 { font-size:.75rem } .contact-item span,.contact-item a { font-size:.75rem }
+            .floating-call { right:60px; font-size:.7rem; padding:4px 12px } .floating-whatsapp { right:12px; width:44px; height:44px }
+            .chat-toggle { bottom:70px; right:12px; width:44px; height:44px; font-size:1.1rem }
+            .chat-window { bottom:116px; right:8px; max-width:calc(100vw - 16px); max-height:55vh; border-radius:12px }
+            .chat-messages { min-height:140px; max-height:30vh; padding:8px 10px } .msg { font-size:.7rem; padding:6px 10px; max-width:96% }
+            .quick-reply-btn { font-size:.6rem; padding:3px 10px } .chat-input-area { padding:6px 10px 10px; gap:6px } .chat-input-area input { font-size:.75rem; padding:6px 10px; min-height:36px } .chat-send-btn { width:36px; height:36px; min-width:36px; font-size:.8rem }
+        }
+        @media(max-width:992px) {
+            .about-grid,.lead-grid { grid-template-columns:1fr }
+            .footer-grid { grid-template-columns:1fr 1fr }
         }
 
         /* ===== CONTENT-VISIBILITY FOR SPEED ===== */
@@ -213,7 +249,7 @@
 
     <!-- ===== NON-CRITICAL CSS (deferred) ===== -->
     <style media="print" onload="this.media='all'">
-        /* ABOUT */
+        /* ABOUT DETAILS */
         .about-section { background:rgba(13,10,8,0.6); backdrop-filter:blur(2px) }
         .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center }
         .about-image { aspect-ratio:4/3; background:#141110; border-radius:16px; border:1px solid rgba(201,169,110,0.12); overflow:hidden; position:relative }
@@ -411,44 +447,6 @@
         .floating-call { position:fixed; bottom:calc(24px + env(safe-area-inset-bottom)); right:88px; display:flex; align-items:center; gap:8px; background:#c9a96e; color:#000; padding:8px 16px 8px 14px; border-radius:50px; box-shadow:0 4px 16px rgba(201,169,110,0.3); z-index:9990; text-decoration:none; font-weight:600; font-size:.9rem; transition:.15s; white-space:nowrap }
         .floating-call:hover { transform:scale(1.05); background:#d4af37 }
         .floating-call svg { width:20px; height:20px; fill:#000; flex-shrink:0 }
-
-        /* RESPONSIVE */
-        @media(max-width:992px) { .about-grid,.lead-grid { grid-template-columns:1fr } .footer-grid { grid-template-columns:1fr 1fr } }
-        @media(max-width:768px) {
-            .counters-row { grid-template-columns:repeat(2,1fr) }
-            .services-grid,.why-grid,.portfolio-grid,.ongoing-grid { grid-template-columns:1fr 1fr; gap:10px }
-            .service-card { padding:16px 12px } .service-card h4 { font-size:.8rem }
-            .testimonials-grid { grid-template-columns:1fr }
-            .client-grid { grid-template-columns:repeat(3,1fr) }
-            .footer-grid { grid-template-columns:1fr }
-            .nav-logo img { height:45px } .nav-logo span { font-size:1rem }
-            .floating-call { right:74px; font-size:.8rem; padding:6px 14px }
-            .floating-whatsapp { right:16px; width:50px; height:50px }
-            .chat-toggle { bottom:80px; right:16px; width:50px; height:50px; font-size:1.3rem }
-            .chat-window { bottom:136px; right:12px; max-width:calc(100vw - 24px); max-height:60vh; border-radius:16px }
-            .chat-messages { min-height:180px; max-height:35vh; padding:10px 12px }
-            .msg { font-size:.78rem; padding:8px 12px; max-width:94% }
-        }
-        @media(max-width:480px) {
-            .services-grid,.why-grid,.portfolio-grid,.ongoing-grid { grid-template-columns:1fr 1fr; gap:8px }
-            .counters-row { grid-template-columns:1fr 1fr }
-            .client-grid { grid-template-columns:repeat(2,1fr) }
-            .about-stats { grid-template-columns:repeat(3,1fr); gap:6px }
-            .stat-box { padding:10px 4px } .stat-box .num { font-size:1.2rem } .stat-box .label { font-size:.55rem }
-            .service-card { padding:12px 10px } .service-card h4 { font-size:.7rem } .service-card p { font-size:.6rem } .service-card .icon { width:32px; height:32px } .service-card .icon svg { width:18px; height:18px }
-            .why-card { padding:10px 8px } .why-card h4 { font-size:.75rem } .why-card p { font-size:.6rem } .why-card .check { width:24px; height:24px; min-width:24px }
-            .portfolio-card .info,.ongoing-card .info { padding:10px 12px } .portfolio-card .info h4,.ongoing-card .info h4 { font-size:.75rem } .portfolio-card .info span,.ongoing-card .info span { font-size:.6rem }
-            .ongoing-card .img .live-badge { font-size:.5rem; padding:3px 10px; top:8px; left:8px }
-            .filter-tab { font-size:.6rem; padding:4px 12px; min-height:30px }
-            .counter-box .num { font-size:1.4rem } .counter-box .label { font-size:.6rem }
-            .lead-form-wrapper { padding:16px 12px } .form-group input,.form-group select,.form-group textarea { font-size:.8rem; padding:8px 10px; min-height:38px } .form-submit-btn { font-size:.8rem; min-height:42px; padding:10px }
-            .contact-item { padding:12px 14px } .contact-item .icon { width:32px; height:32px; min-width:32px } .contact-item .icon svg { width:16px; height:16px } .contact-item h4 { font-size:.75rem } .contact-item span,.contact-item a { font-size:.75rem }
-            .floating-call { right:60px; font-size:.7rem; padding:4px 12px } .floating-whatsapp { right:12px; width:44px; height:44px }
-            .chat-toggle { bottom:70px; right:12px; width:44px; height:44px; font-size:1.1rem }
-            .chat-window { bottom:116px; right:8px; max-width:calc(100vw - 16px); max-height:55vh; border-radius:12px }
-            .chat-messages { min-height:140px; max-height:30vh; padding:8px 10px } .msg { font-size:.7rem; padding:6px 10px; max-width:96% }
-            .quick-reply-btn { font-size:.6rem; padding:3px 10px } .chat-input-area { padding:6px 10px 10px; gap:6px } .chat-input-area input { font-size:.75rem; padding:6px 10px; min-height:36px } .chat-send-btn { width:36px; height:36px; min-width:36px; font-size:.8rem }
-        }
     </style>
 </head>
 <body>
@@ -501,7 +499,7 @@
         </div>
     </nav>
 
-    <!-- HERO (with video) -->
+    <!-- HERO -->
     <section class="hero-section" id="home">
         <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="https://i.ibb.co/R4jLXFVX/Chat-GPT-Image-Aug-9-2026-11-07-42-PM.png">
             <source src="assets/videos/sccw-mumbai.mp4" type="video/mp4">
@@ -788,11 +786,10 @@
         </div>
     </div>
 
-    <!-- ===== DEFERRED SCRIPTS (execute after paint) ===== -->
+    <!-- ===== DEFERRED SCRIPTS ===== -->
     <script>
-        // Use requestIdleCallback or load event to defer heavy initialization
+        // Defer heavy initialization
         function initApp() {
-            // ---- DATA ----
             const servicesData = [
                 { icon: "fa-hard-hat", title: "RCC Construction", desc: "Reinforced cement concrete work." },
                 { icon: "fa-home", title: "Load Bearing", desc: "Traditional & modern load bearing structures." },
@@ -890,32 +887,26 @@
                 "Scantech Pvt Ltd", "Repsindia", "Woodpecker", "Fattiger", "Many More"
             ];
 
-            // ---- RENDER ----
             document.getElementById('servicesGrid').innerHTML = servicesData.map(s =>
                 `<div class="service-card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2V9h3V7h2c.55 0 1-.45 1-1V5.07c2.83 1.02 4.93 3.58 4.93 6.93 0 2.27-.92 4.33-2.42 5.8z"/></svg></div><h4>${s.title}</h4><p>${s.desc}</p></div>`
             ).join('');
-
             document.getElementById('whyGrid').innerHTML = whyData.map(i =>
                 `<div class="why-card"><div class="check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></div><div><h4>${i}</h4><p>Delivering excellence.</p></div></div>`
             ).join('');
-
             document.getElementById('portfolioGrid').innerHTML = portfolioData.map(p =>
                 `<div class="portfolio-card" data-category="${p.cat}"><div class="img"><img src="${p.img}" alt="${p.title}" loading="lazy" width="400" height="250" decoding="async" referrerpolicy="no-referrer"><div class="overlay"><span>View</span></div></div><div class="info"><h4>${p.title}</h4><span>${p.type}</span></div></div>`
             ).join('');
-
             document.getElementById('ongoingGrid').innerHTML = ongoingData.map(p =>
                 `<div class="ongoing-card"><div class="img"><img src="${p.img}" alt="${p.title}" loading="lazy" width="400" height="250" decoding="async" referrerpolicy="no-referrer"><div class="live-badge"><span class="dot-live"></span> LIVE</div></div><div class="info"><h4>${p.title}</h4><span>${p.type}</span></div></div>`
             ).join('');
-
             document.getElementById('testimonialsGrid').innerHTML = testimonialsData.map(t =>
                 `<div class="testimonial-card"><div class="stars">${'★'.repeat(t.stars)}</div><p>"${t.text}"</p><div class="author"><div class="avatar">${t.author.charAt(0)}</div><div><h5>${t.author}</h5><span>${t.role}</span></div></div></div>`
             ).join('');
-
             document.getElementById('clientGrid').innerHTML = clientsData.map(c =>
                 `<div class="client-item">${c}</div>`
             ).join('');
 
-            // ---- FILTER TABS ----
+            // FILTERS
             document.querySelectorAll('.filter-tab').forEach(tab => {
                 tab.addEventListener('click', function() {
                     document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
@@ -928,7 +919,7 @@
                 });
             });
 
-            // ---- COUNTERS ----
+            // COUNTERS
             function animateCounter(el, target) {
                 let current = 0;
                 const step = Math.ceil(target / 40);
@@ -955,7 +946,7 @@
                     counterObserver.observe(el); }
             });
 
-            // ---- SMOOTH SCROLL ----
+            // SMOOTH SCROLL
             document.querySelectorAll('a[href^="#"]').forEach(a => {
                 a.addEventListener('click', function(e) {
                     const href = this.getAttribute('href');
@@ -970,7 +961,7 @@
                 });
             });
 
-            // ---- FORM ----
+            // FORM
             window.handleFormSubmit = function(e) {
                 e.preventDefault();
                 const btn = document.getElementById('formSubmitBtn');
@@ -979,7 +970,7 @@
                 setTimeout(() => { e.target.submit(); }, 600);
             };
 
-            // ---- POPUP ----
+            // POPUP
             const inquiryPopup = document.getElementById('popupOverlay');
             const thankyou = document.getElementById('thankyouOverlay');
 
@@ -1032,10 +1023,9 @@
                     }, 1500);
                 }, 1200);
             };
-            // Show popup after 2.5s
             setTimeout(openInquiryPopup, 2500);
 
-            // ---- CHATBOT ----
+            // CHATBOT
             const chatToggle = document.getElementById('chatToggle');
             const chatWindow = document.getElementById('chatWindow');
             const chatClose = document.getElementById('chatClose');
@@ -1045,7 +1035,6 @@
             const typingIndicator = document.getElementById('typingIndicator');
             const quickReplies = document.getElementById('quickReplies');
             let isChatOpen = false;
-
             const botResponses = [
                 { keywords: ['hello', 'hi', 'hey', 'namaste'],
                     response: "Hello there! 👋 Welcome to SCCW — Mumbai's trusted civil construction & interior design partner. How can I assist you today?" },
@@ -1140,13 +1129,13 @@
                 }
             });
 
-            // ---- NAVBAR SCROLL ----
+            // NAVBAR SCROLL
             const navbar = document.getElementById('navbar');
             window.addEventListener('scroll', function() {
                 navbar.classList.toggle('scrolled', window.scrollY > 40);
             });
 
-            // ---- MOBILE MENU ----
+            // MOBILE MENU
             window.toggleMenu = function() {
                 document.getElementById('hamburger').classList.toggle('active');
                 document.getElementById('mobileMenu').classList.toggle('active');
@@ -1162,16 +1151,12 @@
             };
             document.getElementById('mobileOverlay').addEventListener('click', closeMenu);
 
-            // ---- YEAR ----
             document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-            // ---- URL CLEANUP ----
             if (window.location.search.includes('submitted=true')) {
                 history.replaceState(null, '', window.location.pathname);
             }
         }
 
-        // Defer initialization
         if (window.requestIdleCallback) {
             requestIdleCallback(initApp, { timeout: 2000 });
         } else {
@@ -1180,12 +1165,12 @@
             });
         }
 
-        // Video autoplay helper
+        // Video helper
         window.addEventListener("load", function() {
             const video = document.querySelector(".hero-video");
             if (video) {
                 video.muted = true;
-                video.play().catch(err => { console.log("Autoplay failed:", err); });
+                video.play().catch(err => {});
             }
         });
     </script>
